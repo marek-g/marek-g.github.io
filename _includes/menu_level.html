@@ -4,6 +4,9 @@
     {% assign class = '' %}
 
 
+    {% if forloop.last %}
+    {% assign class = {{ class | append: ' last'}} %}
+    {% endif %}
 
     <li class="{{ class }}">
         <a href="{{ item.url }}">{{ item.text }}</a>
