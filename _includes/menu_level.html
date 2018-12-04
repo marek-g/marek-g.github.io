@@ -1,7 +1,21 @@
 <ul>
     {% for item in include.level %}
 
-    <li class="{% if page.url = item.url %}active{% endif %}">
+    {% assign class = '' %}
+
+    {% if page.url = item.url %}
+    {% assign class = {{ class | append: ' active'}} %}
+    {% endif %}
+
+    {% if item.subitems %}
+    {% assign class = {{ class | append: ' has-sub'}} %}
+    {% endif %}
+
+    {% if forloop.last %}
+    {% assign class = {{ class | append: ' last'}} %}
+    {% endif %}
+
+    <li class="{{ class }}">
         <a href="{{ item.url }}">{{ item.text }}</a>
         {% if item.subitems %}
         {% include menu_level.html level=item.subitems %}

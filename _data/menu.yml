@@ -5,17 +5,13 @@
   url: /first-menu/
   subitems:
       - text: First menu (sub)
-        last: true
         url: /first-menu/first-menu-sub/
         subitems:
           - text: First menu (sub-sub)
-            last: true
             url: /first-menu/first-menu-sub/first-menu-sub-sub/
 
 - text: Second menu
   url: /second-menu/
-  last: true
   subitems:
     - text: Second menu (sub)
-      last: true
       url: /second-menu/second-menu-sub/
