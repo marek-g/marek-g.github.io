@@ -8,7 +8,7 @@
         last: true
         url: /first-menu/first-menu-sub/
         subitems:
-          - text First menu (sub-sub)
+          - text: First menu (sub-sub)
             last: true
             url: /first-menu/first-menu-sub/first-menu-sub-sub/
 
