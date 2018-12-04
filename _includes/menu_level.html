@@ -1,7 +1,10 @@
 <ul>
     {% for item in include.level %}
-    Test
 
+    <li class="{% if page.url = item.url %}active{% endif %} {% if item.subitems %}has-sub{% endif %} {% if item.last %}last{% endif %}">
+        test
+
+    </li>
 
     {% endfor %}
 </ul>
