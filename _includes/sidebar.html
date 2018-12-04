@@ -2,42 +2,22 @@
 
     <nav class="sidebar-nav">
 
-        <div id='cssmenu'>
+        <input type="checkbox" class="menu-trigger">
+        <ul class="menu" role="menu">
+            <li class="start">
+                <a href="#">
+                    <svg preserveAspectRatio="xMidYMid meet" focusable="false" viewBox="-5 -5 34 34">
+                        <g>
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="white"></path>
+                        </g>
+                    </svg>
+                </a>
+            </li>
+
             {% include menu_level.html level=site.data.menu %}
 
-            <ul>
+        </ul>
 
-
-                <li><a href='#'><span>Home</span></a></li>
-
-                {% for node in site.pages %}
-                {% if node.title != null %}
-                {% if node.layout == "page" %}
-                <li><a href='{{ site.baseurl }}{{ node.url  | remove_first: '/' }}'><span>{{ node.title }}</span></a></li>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-
-                <li class='active has-sub'><a href='#'><span>Products</span></a>
-                    <ul>
-                        <li class='has-sub'><a href='#'><span>Product 1</span></a>
-                            <ul>
-                                <li><a href='#'><span>Sub Product</span></a></li>
-                                <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                            </ul>
-                        </li>
-                        <li class='has-sub'><a href='#'><span>Product 2</span></a>
-                            <ul>
-                                <li><a href='#'><span>Sub Product</span></a></li>
-                                <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href='#'><span>About</span></a></li>
-                <li class='last'><a href='#'><span>Contact</span></a></li>
-            </ul>
-        </div>
     </nav>
 
 </div>

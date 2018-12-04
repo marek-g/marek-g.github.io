@@ -1,31 +1,15 @@
-<ul>
-    {% for item in include.level %}
-
-    {% assign class = '' %}
-
-    {% if page.url == item.url %}
-    {% assign class = {{ class | append: ' active'}} %}
+{% for item in include.level %}
+<li>
+    {% if item.url %}
+    <a href="{{ item.url }}">{{ item.text }}</a>
+    {% else %}
+    {{ item.text }}
     {% endif %}
 
     {% if item.subitems %}
-    {% assign class = {{ class | append: ' has-sub'}} %}
-    {% endif %}
-
-    {% if forloop.last %}
-    {% assign class = {{ class | append: ' last'}} %}
-    {% endif %}
-
-    <li class="{{ class }}">
-        {% if item.url %}
-        <a href="{{ item.url }}">{{ item.text }}</a>
-        {% else %}
-        {{ item.text }}
-        {% endif %}
-
-        {% if item.subitems %}
+    <ul>
         {% include menu_level.html level=item.subitems %}
-        {% endif %}
-    </li>
-
-    {% endfor %}
-</ul>
+    </ul>
+    {% endif %}
+</li>
+{% endfor %}
