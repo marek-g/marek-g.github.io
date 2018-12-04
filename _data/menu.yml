@@ -1,6 +1,13 @@
 - text: Home
   url: /
 
+- text: About me
+  subitems:
+    - text: Fav. animations
+      url: /posts/about/fav_animations.html
+    - text: Fav. books
+      url: /posts/about/fav_books.html
+
 - text: First menu
   url: /first-menu/
   subitems:
