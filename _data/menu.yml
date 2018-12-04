@@ -9,6 +9,8 @@
       url: /posts/about/fav_books.html
     - text: Fav. movies
       url: /posts/about/fav_movies.html
+    - text: Fav. music
+      url: /post/about/fav_music.html
 
 - text: First menu
   url: /first-menu/
