@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300);
 /* Starter CSS for Flyout Menu */
 #cssmenu,
 #cssmenu ul,
@@ -53,7 +53,7 @@
 }
 /* Custom CSS Styles */
 #cssmenu {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed';
   font-size: 18px;
   width: 200px;
 }
@@ -69,10 +69,10 @@
   float: none;
 }
 #cssmenu ul {
-  background: #fff;
+  background: #222;
 }
 #cssmenu > ul > li {
-  border-left: 3px solid #d7d8da;
+  border-left: 3px solid #222222;
 }
 #cssmenu > ul > li > a {
   padding: 10px 20px;
@@ -84,7 +84,7 @@
   color: #3dbd99;
 }
 #cssmenu > ul > li:hover {
-  background: #f6f6f6;
+  background: #444444;
 }
 /* Sub Menu */
 #cssmenu ul ul a:link,
@@ -99,14 +99,14 @@
 }
 #cssmenu ul ul a {
   padding: 8px 0;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #666;
 }
 #cssmenu ul ul li {
   padding: 0 20px;
-  background: #fff;
+  background: #222;
 }
 #cssmenu ul ul li:last-child {
-  border-bottom: 3px solid #d7d8da;
+  border-bottom: 3px solid #888;
   padding-bottom: 10px;
 }
 #cssmenu ul ul li:first-child {
@@ -124,7 +124,7 @@
   left: -20px;
   top: 13px;
   border-left: 10px solid transparent;
-  border-right: 10px solid #fff;
+  border-right: 10px solid #222;
   border-bottom: 10px solid transparent;
   border-top: 10px solid transparent;
 }
