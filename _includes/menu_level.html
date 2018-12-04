@@ -16,7 +16,12 @@
     {% endif %}
 
     <li class="{{ class }}">
+        {% if item.url %}
         <a href="{{ item.url }}">{{ item.text }}</a>
+        {% else %}
+        {{ item.text }}
+        {% endif %}
+
         {% if item.subitems %}
         {% include menu_level.html level=item.subitems %}
         {% endif %}
