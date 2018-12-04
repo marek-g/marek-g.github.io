@@ -3,6 +3,13 @@
 
     {% assign class = '' %}
 
+    {% if page.url == item.url %}
+    {% assign class = {{ class | append: ' active'}} %}
+    {% endif %}
+
+    {% if item.subitems %}
+    {% assign class = {{ class | append: ' has-sub'}} %}
+    {% endif %}
 
     {% if forloop.last %}
     {% assign class = {{ class | append: ' last'}} %}
