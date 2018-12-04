@@ -20,7 +20,7 @@ body {
 /* General & 'Reset' Stuff */
 
 .container {
-  max-width: 1000px;
+  max-width: 80%;
   margin-left: 250px;
   margin-right: 90px;
 }
@@ -75,6 +75,7 @@ header h2 {
   font-size: 18px;
   font-weight: 300;
   color: #666;
+  margin: 0;
 }
 
 #downloads .btn {
