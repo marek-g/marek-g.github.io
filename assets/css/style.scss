@@ -4,12 +4,12 @@
 @import 'jekyll-theme-hacker';
 
 .sidebar {
-    width: 160px;
+    width: 100%;
     position: fixed;
     z-index: 1;
     top: 50px;
     left: 20px;
-    background-color: #111;
+    background-color: #00000000;
     overflow-x: hidden;
     padding-top: 20px;
 }
