@@ -1,17 +1,32 @@
-<nav>
+<!--    Made by Erik Terwan    -->
+<!--   24th of November 2015   -->
+<!--        MIT License        -->
+<nav role="navigation">
 
-    <input type="checkbox" class="menu-trigger">
-    <ul class="menu" role="menu">
-        <li class="start">
-            <a href="#">
-                <svg preserveAspectRatio="xMidYMid meet" focusable="false" viewBox="-5 -5 34 34">
-                    <g>
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="white"></path>
-                    </g>
-                </svg>
-            </a>
-        </li>
-        {% include menu_level.html level=site.data.menu %}
-    </ul>
+    <div id="menuToggle">
+        <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+        <input type="checkbox" />
+
+        <!--
+        Some spans to act as a hamburger.
+        
+        They are acting like a real hamburger,
+        not that McDonalds stuff.
+        -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <!--
+        Too bad the menu has to be inside of the button
+        but hey, it's pure CSS magic.
+        -->
+        <ul id="menu">
+            {% include menu_level.html level=site.data.menu %}
+        </ul>
+    </div>
 
 </nav>
