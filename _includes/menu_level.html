@@ -1,7 +1,7 @@
 <ul>
     {% for item in include.level %}
 
-    <li class="">
+    <li class="{% if page.url = item.url %}active{% endif %}">
         <a href="{{ item.url }}">{{ item.text }}</a>
         {% if item.subitems %}
         {% include menu_level.html level=item.subitems %}
