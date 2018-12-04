@@ -4,6 +4,15 @@
         <div id='cssmenu'>
             <ul>
                 <li><a href='#'><span>Home</span></a></li>
+
+                {% for node in site.pages %}
+                {% if node.title != null %}
+                {% if node.layout == "page" %}
+                <li><a href='{{ site.baseurl }}{{ node.url  | remove_first: '/' }}'><span>{{ node.title }}</span></a></li>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+
                 <li class='active has-sub'><a href='#'><span>Products</span></a>
                     <ul>
                         <li class='has-sub'><a href='#'><span>Product 1</span></a>
