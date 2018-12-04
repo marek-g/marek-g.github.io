@@ -325,6 +325,8 @@ Roger Waters - Three Wishes
 
 Rolling Stones - Streets of Love
 
+Scorpions - You and I
+
 Sheryl Crow - All I Wanna Do
 
 Sheryl Crow - Tomorrow Never Dies
