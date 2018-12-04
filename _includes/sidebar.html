@@ -1,8 +1,13 @@
 <div class="sidebar">
 
     <nav class="sidebar-nav">
+
         <div id='cssmenu'>
+            {% include menu_level.html level=site.data.menu %}
+
             <ul>
+
+
                 <li><a href='#'><span>Home</span></a></li>
 
                 {% for node in site.pages %}

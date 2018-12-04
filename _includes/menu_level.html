@@ -1,0 +1,12 @@
+<ul>
+    {% for item in include.level %}
+
+    <li class="{% if page.url = item.url %}active{% endif %} {% if item.subitems %}has-sub{% endif %} {% if item.last %}last{% endif %}">
+        <a href="{{ item.url }}">{{ item.text }}</a>
+        {% if item.subitems %}
+        {% include menu_level.html level=item.subitems %}
+        {% endif %}
+    </li>
+
+    {% endfor %}
+</ul>
