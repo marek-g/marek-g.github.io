@@ -1,15 +1,6 @@
 ---
 layout: page
-title: Test
+title: Home
 ---
 
-# Test
-
-Test.
-
-* aaa
-* bbb
-
-```
-code
-```
+My linkedin profile: [http://pl.linkedin.com/in/marekgibek](http://pl.linkedin.com/in/marekgibek)
