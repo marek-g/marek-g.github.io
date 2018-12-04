@@ -1,3 +1,8 @@
+---
+layout: page
+title: Favourite music
+---
+
 ![music](music.png)
 
 10cc - I'm Not In Love
