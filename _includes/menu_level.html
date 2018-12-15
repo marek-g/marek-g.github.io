@@ -1,8 +1,10 @@
 {% for item in include.level %}
 <li>
+    {% assign collapsibleId = include.collapsibleId + "_{{forloop.index}}" %}
+
     {% if item.collapsibleId %}
-    <label for="{{ item.collapsibleId }}">{{ item.text }}</label>
-    <input type="checkbox" id="{{ item.collapsibleId }}" />
+    <label for="{{ collapsibleId }}">{{ item.text }}</label>
+    <input type="checkbox" id="{{ collapsibleId }}" />
     {% endif %}
 
     {% if item.url %}
@@ -11,7 +13,8 @@
 
     {% if item.subitems %}
     <ul>
-        {% include menu_level.html level=item.subitems %}
+        {% include menu_level.html level=item.subitems
+        collapsibleId="{{collapsibleId}}"%}
     </ul>
     {% endif %}
 </li>

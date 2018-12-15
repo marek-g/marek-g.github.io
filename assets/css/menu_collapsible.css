@@ -1,9 +1,11 @@
 /* Source: http://bernholdtech.blogspot.com/2013/04/very-simple-pure-css-collapsible-list.html */
 
+/* Collapse the list  */
 .collapsibleList li > input + * {
  display: none;
 }
- 
+
+/* Expand the list  */
 .collapsibleList li > input:checked + * {
  display: block;
 }
