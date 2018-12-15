@@ -1,17 +1,17 @@
-{% for item in include.level %}
+{%- for item in include.level -%}
 <li>
-    {% if item.url %}
+    {%- if item.url -%}
     <a href="{{ item.url }}">{{ item.text }}</a>
-    {% endif %}
+    {%- endif -%}
 
-    {% if item.subitems %}
-    {% assign cId = include.collapsibleId | append: "_" | append: forloop.index %}
+    {%- if item.subitems -%}
+    {%- assign cId = include.collapsibleId | append: "_" | append: forloop.index -%}
     <label for="{{ cId }}">{{ item.text }}</label>
     <input type="checkbox" id="{{ cId }}" {% if page.url contains item.open_for %}checked{% endif %} />
     <ul>
-        {% include menu_level.html level=item.subitems
-        collapsibleId=cId %}
+        {%- include menu_level.html level=item.subitems
+        collapsibleId=cId -%}
     </ul>
-    {% endif %}
+    {%- endif -%}
 </li>
-{% endfor %}
+{%- endfor -%}
