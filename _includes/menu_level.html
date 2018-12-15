@@ -7,10 +7,9 @@
     {% if item.subitems %}
     {% assign cId = "A" %}
     <label for="{{ cId }}">{{ item.text }}</label>
-    <input type="checkbox" id="{{ cId }" />
+    <input type="checkbox" id="{{ cId }}" />
     <ul>
-        {% include menu_level.html level=item.subitems
-        %}
+        {% include menu_level.html level=item.subitems %}
     </ul>
     {% endif %}
 </li>
