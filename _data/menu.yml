@@ -15,16 +15,15 @@
 
 - text: First menu
   collapsibleId: listFirstMenu
-  url: /first-menu/
   subitems:
       - text: First menu (sub)
+        collapsibleId: listFirstMenuSub
         subitems:
           - text: First menu (sub-sub)
             url: /first-menu/first-menu-sub/first-menu-sub-sub/
 
 - text: Second menu
   collapsibleId: listSecondMenu
-  url: /second-menu/
   subitems:
     - text: Second menu (sub)
       url: /second-menu/second-menu-sub/
