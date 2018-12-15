@@ -2,6 +2,7 @@
   url: /
 
 - text: About me
+  collapsibleId: listAboutMe
   subitems:
     - text: Fav. animations
       url: /posts/about/fav_animations.html
@@ -13,6 +14,7 @@
       url: /posts/about/fav_music.html
 
 - text: First menu
+  collapsibleId: listFirstMenu
   url: /first-menu/
   subitems:
       - text: First menu (sub)
@@ -21,6 +23,7 @@
             url: /first-menu/first-menu-sub/first-menu-sub-sub/
 
 - text: Second menu
+  collapsibleId: listSecondMenu
   url: /second-menu/
   subitems:
     - text: Second menu (sub)

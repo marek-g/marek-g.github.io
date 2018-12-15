@@ -1,5 +1,10 @@
 {% for item in include.level %}
 <li>
+    {% if item.collapsibleId %}
+    <label for="{{ item.collapsibleId }}">{{ item.text }}</label>
+    <input type="checkbox" id="{{ item.collapsibleId }}" />
+    {% endif %}
+
     {% if item.url %}
     <a href="{{ item.url }}">{{ item.text }}</a>
     {% else %}

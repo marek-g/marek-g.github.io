@@ -1,0 +1,22 @@
+/* Source: http://bernholdtech.blogspot.com/2013/04/very-simple-pure-css-collapsible-list.html */
+
+.collapsibleList li > input + * {
+ display: none;
+}
+ 
+.collapsibleList li > input:checked + * {
+ display: block;
+}
+
+.collapsibleList li > input {
+ display: none;
+}
+
+.collapsibleList label {
+ cursor: pointer;
+}
+
+/* Hide checkboxes */
+.collapsibleList li > input {
+    display: none;
+}
