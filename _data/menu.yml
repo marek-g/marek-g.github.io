@@ -2,6 +2,7 @@
   url: /
 
 - text: About me
+  open_for: /posts/about/
   subitems:
     - text: Fav. animations
       url: /posts/about/fav_animations.html
