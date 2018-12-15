@@ -5,12 +5,10 @@
     {% endif %}
 
     {% if item.subitems %}
+    {% assign collapsibleId = "{{ include.collapsibleId }}_{{ forloop.index }}" %}
     <label for="{{ collapsibleId }}">{{ item.text }}</label>
-    <input type="checkbox" id="{{ collapsibleId }}" />
+    <input type="checkbox" id="{{ collapsibleId }" />
     <ul>
         {% include menu_level.html level=item.subitems
-        collapsibleId="{{collapsibleId}}" %}
-    </ul>
-    {% endif %}
-</li>
-{% endfor %}
+            collapsibleId="{{ collapsibleId }}"
+        %} </ul> {% endif %} </li> {% endfor %}
