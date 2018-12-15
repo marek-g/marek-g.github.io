@@ -5,7 +5,7 @@
     {% endif %}
 
     {% if item.subitems %}
-    {% assign collapsibleId = "{{ include.collapsibleId }}_{{ forloop.index }}" %}
+    {% assign collapsibleId = "A" %}
     <label for="{{ collapsibleId }}">{{ item.text }}</label>
     <input type="checkbox" id="{{ collapsibleId }" />
     <ul>
