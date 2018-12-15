@@ -5,11 +5,11 @@
     {% endif %}
 
     {% if item.subitems %}
-    <label for="{{ collapsibleId }}_{{forloop.index}}">{{ item.text }}</label>
-    <input type="checkbox" id="{{ collapsibleId }}_{{forloop.index}}" />
+    <label for="{{ collapsibleId }}">{{ item.text }}</label>
+    <input type="checkbox" id="{{ collapsibleId }}" />
     <ul>
         {% include menu_level.html level=item.subitems
-        collapsibleId="{{collapsibleId}}_{{forloop.index}}"%}
+        collapsibleId="{{collapsibleId}}" %}
     </ul>
     {% endif %}
 </li>
