@@ -10,5 +10,5 @@
     <input type="checkbox" id="{{ collapsibleId }" />
     <ul>
         {% include menu_level.html level=item.subitems
-            collapsibleId="{{ collapsibleId }}"
+            collapsibleId=collapsibleId"
         %} </ul> {% endif %} </li> {% endfor %}
