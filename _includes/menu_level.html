@@ -9,8 +9,8 @@
     <label for="{{ cId }}">{{ item.text }}</label>
     <input type="checkbox" id="{{ cId }}" {% if page.url contains item.open_for %}checked{% endif %} />
     <ul>
-        {%- include menu_level.html level=item.subitems
-        collapsibleId=cId -%}
+        {% include menu_level.html level=item.subitems
+        collapsibleId=cId %}
     </ul>
     {%- endif -%}
 </li>
