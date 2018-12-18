@@ -30,9 +30,14 @@
   transition: color 0.3s ease;
 }
 
-a:hover
+#menu a:hover
 {
   color: tomato;
+}
+
+#menu a.active
+{
+  color: #ff0000;
 }
 
 #menu li {

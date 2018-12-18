@@ -1,7 +1,7 @@
 {%- for item in include.level -%}
 <li>
     {%- if item.url -%}
-    <a href="{{ item.url }}">{{ item.text }}</a>
+    <a href="{{ item.url }}" {% if page.url==item.url %} class="active" {% endif %}>{{ item.text }}</a>
     {%- endif -%}
 
     {%- if item.subitems -%}
