@@ -22,7 +22,7 @@
   text-shadow: 0 0 5px rgba(104,182,255,0.5);
 }
 
-#menu a
+#menu a, #menu label
 {
   text-decoration: none;
   color: #cdcdcd;
@@ -30,7 +30,7 @@
   transition: color 0.3s ease;
 }
 
-#menu a:hover
+#menu a:hover, #menu label:hover
 {
   color: tomato;
 }
