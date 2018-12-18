@@ -61,6 +61,13 @@
   user-select: none;
 }
 
+/* Move menu upper for smaller widths. */
+@media only all and (max-width: 1100px) {
+  #menuToggle {
+    top: -10px;
+  }
+}
+
 #menuToggle input
 {
   display: block;
