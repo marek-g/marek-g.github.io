@@ -61,13 +61,6 @@
   user-select: none;
 }
 
-/* Move menu upper for smaller widths. */
-@media only all and (max-width: 1440px) {
-  #menuToggle {
-    top: -102px;
-  }
-}
-
 #menuToggle input
 {
   display: block;
@@ -181,4 +174,18 @@
 #menuToggle input:checked ~ ul
 {
   transform: none;
+}
+
+
+/* Move menu upper for smaller widths. */
+@media (max-width: 1440px) {
+  #menuToggle {
+    top: -102px;
+  }
+}
+
+@media (min-width: 1440px) {
+  #menuToggle #menuButton {
+    display: none;
+  }
 }
