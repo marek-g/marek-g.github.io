@@ -22,7 +22,7 @@ body {
 .container {
   max-width: 1000px;
   margin: 0 0 0 400px;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 @media only all and (max-width: 1460px) {
@@ -55,7 +55,7 @@ header {
   width: 100%;
   border-bottom: 1px dashed $conifer; //header;
   padding: 20px 60px;
-  margin: 0 0 40px 20px;
+  margin: 0 0 20px 20px;
 }
 
 header h1 {

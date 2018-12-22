@@ -62,7 +62,7 @@
 }
 
 /* Move menu upper for smaller widths. */
-@media only all and (max-width: 1250px) {
+@media only all and (max-width: 1460px) {
   #menuToggle {
     top: -10px;
   }
@@ -154,7 +154,7 @@
 {
   position: absolute;
   width: 300px;
-  margin: -100px 0 0 -50px;
+  margin: -80px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
   
