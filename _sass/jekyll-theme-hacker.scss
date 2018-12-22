@@ -20,9 +20,15 @@ body {
 /* General & 'Reset' Stuff */
 
 .container {
-  width: 90%;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 0 0 400px;
+  padding: 20px;
+}
+
+@media only all and (max-width: 1400px) {
+  .container {
+    margin: 0 0 0 auto;
+  }
 }
 
 section {
