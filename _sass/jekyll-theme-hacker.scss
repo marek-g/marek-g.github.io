@@ -72,7 +72,7 @@ header h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-@media only all and (max-width: 1460px) {
+@media only all and (min-width: 1460px) {
   header h1:before {
     content: "./ ";
     font-size: 24px;
