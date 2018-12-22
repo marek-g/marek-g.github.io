@@ -185,7 +185,16 @@
 }
 
 @media (min-width: 1440px) {
-  #menuToggle #menuButton {
+  #menuToggle input {
     display: none;
+  }
+  #menuToggle span {
+    display: none;
+  }
+  #menu
+  {
+    margin: -50px 0 0 -50px;
+    padding-top: 50px;
+    transform: none;
   }
 }
