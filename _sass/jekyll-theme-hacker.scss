@@ -54,7 +54,7 @@ header {
   background: rgba(0, 0, 0, 0.1);
   width: 100%;
   border-bottom: 1px dashed $conifer; //header;
-  padding: 20px 60px;
+  padding: 20px 80px;
   margin: 0 0 20px 20px;
 }
 
@@ -72,9 +72,11 @@ header h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-header h1:before {
-  content: "./ ";
-  font-size: 24px;
+@media only all and (max-width: 1460px) {
+  header h1:before {
+    content: "./ ";
+    font-size: 24px;
+  }
 }
 
 header h2 {

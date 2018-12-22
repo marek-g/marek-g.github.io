@@ -64,7 +64,7 @@
 /* Move menu upper for smaller widths. */
 @media only all and (max-width: 1460px) {
   #menuToggle {
-    top: -10px;
+    top: -100px;
   }
 }
 
