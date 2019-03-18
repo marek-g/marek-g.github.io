@@ -14,9 +14,12 @@
       url: /posts/about/fav_music.html
 
 - text: Tips & Tricks
+  open_for: /posts/tips-and-tricks/
   subitems:
     - text: Desktop streaming
       url: /posts/tips-and-tricks/desktop_streaming.html
+    - text: Video conversion
+      url: /posts/tips-and-tricks/video_conversion.html
 
 - text: First menu
   subitems:
