@@ -13,6 +13,11 @@
     - text: Fav. music
       url: /posts/about/fav_music.html
 
+- text: Tips & Tricks
+  subitems:
+    - text: Desktop streaming
+      url: /posts/tips-and-tricks/desktop_streaming.html
+
 - text: First menu
   subitems:
       - text: First menu (sub)
@@ -20,7 +25,3 @@
           - text: First menu (sub-sub)
             url: /first-menu/first-menu-sub/first-menu-sub-sub/
 
-- text: Second menu
-  subitems:
-    - text: Second menu (sub)
-      url: /second-menu/second-menu-sub/
