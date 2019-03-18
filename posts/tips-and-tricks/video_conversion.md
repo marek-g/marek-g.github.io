@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Video convertion
+title: Video conversion
 ---
 
-# Video convertion
+# Video conversion
 
 ## Linux
 
