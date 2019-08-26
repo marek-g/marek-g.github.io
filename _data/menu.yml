@@ -18,6 +18,8 @@
   subitems:
     - text: Desktop streaming
       url: /posts/tips-and-tricks/desktop_streaming.html
+    - text: Desktop zoom
+      url: /posts/tips-and-tricks/desktop_zoom.html
     - text: Video conversion
       url: /posts/tips-and-tricks/video_conversion.html
 
