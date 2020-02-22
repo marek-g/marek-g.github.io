@@ -25,6 +25,15 @@
     - text: VirtualBox Physical Partitions
       url: /posts/tips-and-tricks/virtualbox_physical_partitions.html
 
+- text: Programming
+  open_for: /posts/programming/
+  subitems:
+    - text: Rust
+      open_for: /posts/programming/rust/
+      subitems:
+        - text: Rc trait objects
+          url: /posts/programming/rust/rc_trait_objects.html
+
 - text: First menu
   subitems:
       - text: First menu (sub)
