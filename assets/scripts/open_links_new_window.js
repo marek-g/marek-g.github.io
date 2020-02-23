@@ -9,4 +9,6 @@ function external_new_window() {
     }
 }
 
-external_new_window();
+window.onload = function () {
+    external_new_window();
+}
