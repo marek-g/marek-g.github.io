@@ -33,11 +33,3 @@
       subitems:
         - text: Rc trait objects
           url: /posts/programming/rust/rc_trait_objects.html
-
-- text: First menu
-  subitems:
-      - text: First menu (sub)
-        subitems:
-          - text: First menu (sub-sub)
-            url: /first-menu/first-menu-sub/first-menu-sub-sub/
-
