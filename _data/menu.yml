@@ -30,6 +30,11 @@
 - text: Programming
   open_for: /posts/programming/
   subitems:
+    - text: Architecture
+      open_for: /posts/programming/arch/
+      subitems:
+        - text: Architecture topics
+          url: /posts/programming/arch/topics.html
     - text: Rust
       open_for: /posts/programming/rust/
       subitems:
