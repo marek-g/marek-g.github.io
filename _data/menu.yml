@@ -26,6 +26,8 @@
       url: /posts/tips-and-tricks/video_conversion.html
     - text: VirtualBox Physical Partitions
       url: /posts/tips-and-tricks/virtualbox_physical_partitions.html
+    - text: Rust Crosscompiling
+      url: /posts/tips-and-tricks/rust_crosscompiling.html
 
 - text: Programming
   open_for: /posts/programming/
