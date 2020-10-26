@@ -42,3 +42,12 @@
       subitems:
         - text: Rc trait objects
           url: /posts/programming/rust/rc_trait_objects.html
+
+- text: Projects
+  open_for: /posts/projects/
+  subitems:
+    - text: Archive
+      open_for: /posts/projects/archive/
+      subitems:
+        - text: Nemerle Async Await
+          url: /posts/projects/archive/nemerle_async_await.html
