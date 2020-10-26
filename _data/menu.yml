@@ -14,20 +14,20 @@
       url: /posts/about/fav_music.html
 
 - text: Tips & Tricks
-  open_for: /posts/tips-and-tricks/
+  open_for: /posts/tips_and_tricks/
   subitems:
     - text: Desktop streaming
-      url: /posts/tips-and-tricks/desktop_streaming.html
+      url: /posts/tips_and_tricks/desktop_streaming.html
     - text: Desktop zoom
-      url: /posts/tips-and-tricks/desktop_zoom.html
+      url: /posts/tips_and_tricks/desktop_zoom.html
     - text: HTTPS Sniffing
-      url: /posts/tips-and-tricks/https_sniffing.html
+      url: /posts/tips_and_tricks/https_sniffing.html
     - text: Video conversion
-      url: /posts/tips-and-tricks/video_conversion.html
+      url: /posts/tips_and_tricks/video_conversion.html
     - text: VirtualBox Physical Partitions
-      url: /posts/tips-and-tricks/virtualbox_physical_partitions.html
+      url: /posts/tips_and_tricks/virtualbox_physical_partitions.html
     - text: Rust Crosscompiling
-      url: /posts/tips-and-tricks/rust_crosscompiling.html
+      url: /posts/tips_and_tricks/rust_crosscompiling.html
 
 - text: Programming
   open_for: /posts/programming/
