@@ -53,6 +53,8 @@
       subitems:
         - text: MarekTV (1999-2015)
           url: /posts/projects/archive/marektv.html
+        - text: Terminator (2006-2013)
+          url: /posts/projects/archive/terminator.html
         - text: BitTorrent Live (2010)
           url: /posts/projects/archive/bittorrent_live.html
         - text: Kobo as a Linux tablet (2013-08)
