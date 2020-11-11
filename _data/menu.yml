@@ -51,5 +51,7 @@
       subitems:
         - text: Kobo as a Linux tablet (2013-08)
           url: /posts/projects/archive/kobo_as_linux_tablet.html
+        - text: Kobo as a Android tablet (2014-07)
+          url: /posts/projects/archive/kobo_as_android_tablet.html
         - text: Nemerle Async Await (2012-07)
           url: /posts/projects/archive/nemerle_async_await.html
