@@ -49,6 +49,8 @@
     - text: Archive
       open_for: /posts/projects/archive/
       subitems:
+        - text: BitTorrent Live (2010)
+          url: /posts/projects/archive/bittorrent_live.html
         - text: Kobo as a Linux tablet (2013-08)
           url: /posts/projects/archive/kobo_as_linux_tablet.html
         - text: Kobo as a Android tablet (2014-07)

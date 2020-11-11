@@ -43,52 +43,52 @@ Linux account login/password: `marek` / `abc123`.
 
     Boot menu:
 
-![Kobo screenshot](images/kobo_02.png)
+![Kobo screenshot](kobo_as_linux_tablet/kobo_02.png)
 
 
     Diagnistic mode - after click on the Wi-Fi icon (right bottom corner) - ftp & telnet:
 
-![Kobo screenshot](images/kobo_03.png)
+![Kobo screenshot](kobo_as_linux_tablet/kobo_03.png)
 
     After click on computer icon - booting continues (click on book icon loads original kobo software):
 
-![Kobo screenshot](images/kobo_04.png)
+![Kobo screenshot](kobo_as_linux_tablet/kobo_04.png)
 
     Games menu:
 
-![Kobo screenshot](images/kobo_05.png)
+![Kobo screenshot](kobo_as_linux_tablet/kobo_05.png)
 
     Calculator:
 
-![Kobo screenshot](images/kobo_06.png)
+![Kobo screenshot](kobo_as_linux_tablet/kobo_06.png)
 
     Fullscreen mode (home button):
 
-![Kobo screenshot](images/kobo_07.png)
+![Kobo screenshot](kobo_as_linux_tablet/kobo_07.png)
 
     Terminal and keyboard:
 
-![Kobo screenshot](images/kobo_08.png)
+![Kobo screenshot](kobo_as_linux_tablet/kobo_08.png)
 
     FBReader:
 
-![Kobo screenshot](images/kobo_09.png)
+![Kobo screenshot](kobo_as_linux_tablet/kobo_09.png)
 
     New York Times in Firefox (fullscreen):
 
-![Kobo screenshot](images/kobo_10.png)
+![Kobo screenshot](kobo_as_linux_tablet/kobo_10.png)
 
     Aisle Riot - Klondike:
 
-![Kobo screenshot](images/kobo_11.png)
+![Kobo screenshot](kobo_as_linux_tablet/kobo_11.png)
 
     Jigsaw Puzzle:
 
-![Kobo screenshot](images/kobo_12.png)
+![Kobo screenshot](kobo_as_linux_tablet/kobo_12.png)
 
     Power off:
 
-![Kobo screenshot](images/kobo_13.png)
+![Kobo screenshot](kobo_as_linux_tablet/kobo_13.png)
 
 ## Additional links:
 
