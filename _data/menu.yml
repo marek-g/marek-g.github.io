@@ -20,6 +20,8 @@
       url: /posts/tips_and_tricks/desktop_streaming.html
     - text: Desktop zoom
       url: /posts/tips_and_tricks/desktop_zoom.html
+    - text: GIT
+      url: /posts/tips_and_tricks/git.html
     - text: HTTPS Sniffing
       url: /posts/tips_and_tricks/https_sniffing.html
     - text: Video conversion
