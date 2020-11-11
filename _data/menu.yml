@@ -46,6 +46,8 @@
 - text: Projects
   open_for: /posts/projects/
   subitems:
+    - text: Tapeciarnia (2012-2014)
+      url: /posts/projects/tapeciarnia.html
     - text: Archive
       open_for: /posts/projects/archive/
       subitems:
