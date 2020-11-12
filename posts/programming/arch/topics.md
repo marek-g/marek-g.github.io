@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Architecture topics
+parent: Arch
+grand_parent: Programming
 ---
 
 # Architecture topics

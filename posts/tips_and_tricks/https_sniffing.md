@@ -1,6 +1,7 @@
 ---
 layout: page
 title: HTTPS Sniffing
+parent: Tips & Tricks
 ---
 
 # HTTPS Sniffing with mitmproxy

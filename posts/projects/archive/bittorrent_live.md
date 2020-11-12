@@ -1,6 +1,8 @@
 ---
 layout: page
 title: BitTorrent Live (2010)
+parent: Archive
+grand_parent: Projects
 ---
 
 # BitTorrent Live (2010)

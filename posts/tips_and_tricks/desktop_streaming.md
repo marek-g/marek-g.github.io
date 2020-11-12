@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Desktop streaming
+parent: Tips & Tricks
 ---
 
 # Desktop streaming

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: GIT
+parent: Tips & Tricks
 ---
 
 # GIT

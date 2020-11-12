@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Favourite animations
+parent: About
 ---
 
 # Favourite animations

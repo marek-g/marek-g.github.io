@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Favourite music
+parent: About
 ---
 
 # Favourite music

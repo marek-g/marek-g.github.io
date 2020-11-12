@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Terminator (2006-2013)
+parent: Archive
+grand_parent: Projects
 ---
 
 # Terminator (2006-2013)

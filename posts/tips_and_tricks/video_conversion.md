@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Video conversion
+parent: Tips & Tricks
 ---
 
 # Video conversion

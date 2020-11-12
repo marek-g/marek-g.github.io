@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Tapeciarnia (2012 - 2014)
+parent: Projects
 ---
 
 # Tapeciarnia (2012 - 2014)

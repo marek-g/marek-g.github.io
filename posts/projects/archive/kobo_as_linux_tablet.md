@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Kobo as a Linux tablet (2013-08)
+parent: Archive
+grand_parent: Projects
 ---
 
 # Kobo as a Linux tablet (2013-08)

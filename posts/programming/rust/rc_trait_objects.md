@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Rc trait objects
+parent: Rust
+grand_parent: Programming
 ---
 
 # Rc trait objects

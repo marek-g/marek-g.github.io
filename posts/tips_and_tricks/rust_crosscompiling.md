@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Rust Crosscompiling
+parent: Tips & Tricks
 ---
 
 # Rust Crosscompiling on Linux

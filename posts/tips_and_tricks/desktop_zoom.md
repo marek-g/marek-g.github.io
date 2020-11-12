@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Desktop zoom
+parent: Tips & Tricks
 ---
 
 # Desktop zoom with MMB in KDE
