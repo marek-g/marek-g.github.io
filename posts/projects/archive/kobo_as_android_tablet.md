@@ -3,6 +3,7 @@ layout: page
 title: Kobo as Android tablet (2014-07)
 parent: Archive
 grand_parent: Projects
+nav_order: 6
 ---
 
 # Kobo as Android tablet (2014-07)

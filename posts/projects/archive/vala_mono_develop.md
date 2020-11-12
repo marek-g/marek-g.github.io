@@ -3,6 +3,7 @@ layout: page
 title: Vala in Mono Develop (2014-07)
 parent: Archive
 grand_parent: Projects
+nav_order: 7
 ---
 
 I took Vala Binding Mono Develop plugin (it's development was abandoned a few years ago) and I upgraded it to Mono Develop 5. I've rewritten the references (packages) mechanism and prepared portable version for Windows. The same plugin works on Windows & Linux.

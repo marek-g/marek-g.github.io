@@ -3,6 +3,7 @@ layout: page
 title: Kobo as a Linux tablet (2013-08)
 parent: Archive
 grand_parent: Projects
+nav_order: 5
 ---
 
 # Kobo as a Linux tablet (2013-08)

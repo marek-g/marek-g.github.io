@@ -3,6 +3,7 @@ layout: page
 title: Terminator (2006-2013)
 parent: Archive
 grand_parent: Projects
+nav_order: 2
 ---
 
 # Terminator (2006-2013)
