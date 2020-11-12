@@ -1,6 +1,7 @@
 ---
 layout: page
 title: VirtualBox Physical Partitions
+parent: Tips & Tricks
 ---
 
 # VirtualBox Physical Partitions
