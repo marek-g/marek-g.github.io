@@ -50,4 +50,27 @@ xsetwacom set "UGTABLET 10 inch PenTablet Keyboard pad" button 11 key ctrl z
 xsetwacom set "UGTABLET 10 inch PenTablet Keyboard pad" button 12 key ctrl z
 ```
 
+To get all possible settings:
+
+```sh
+xsetwacom -s get "UGTABLET 10 inch PenTablet Pen stylus" all
+```
+
 Read about it and other methods on: https://github.com/DIGImend/digimend-kernel-drivers/issues/340
+
+# Map tablet to monitor
+
+Use `HEAD-n` as monitor number:
+
+```sh
+xsetwacom set "UGTABLET 10 inch PenTablet Pen stylus" MapToOutput HEAD-0
+```
+
+The full area is 32768x32768 for 16x10 monitor but can be limited.
+
+16x9 horizontal (`height = 32768 * (9 / 10) = 29491`):
+
+```sh
+xsetwacom set "UGTABLET 10 inch PenTablet Pen stylus" "Area" "0 1638 32767 31128"
+xsetwacom set "UGTABLET 10 inch PenTablet Pen stylus" "Rotate" "none"
+```
