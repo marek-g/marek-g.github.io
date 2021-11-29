@@ -4,27 +4,27 @@ title: HTTPS Sniffing
 parent: Tips & Tricks
 ---
 
-# HTTPS Sniffing with mitmproxy
+# HTTPS Sniffing with mitmproxy in reverse mode
 
 1. Install mitmproxy
 
-2. Run mitmproxy & exit (creates ~/.mitmproxy)
+2. Run `mitmproxy` & exit (creates ~/.mitmproxy)
 
-3. openssl x509 -in ~/.mitmproxy/mitmproxy-ca.pem -inform PEM -out ca.crt
+3. `openssl x509 -in ~/.mitmproxy/mitmproxy-ca.pem -inform PEM -out ca.crt`
 
-4. sudo trust anchor ca.crt
+4. `sudo trust anchor ca.crt`
 
-5. rm ca.crt
+5. `rm ca.crt`
 
-6. mitmproxy --mode reverse:https://login.nestbank.pl/ -p 4433
+6. `mitmproxy --mode reverse:https://login.nestbank.pl/ -p 4433`
 
 7. Connect to "https://localhost:4433"
 
 Remove certificate after usage:
 
-1. trust list
+1. `trust list`
 
-2. sudo trust anchor --remove "pkcs11:id=%AA%BB%CC%DD%EE;type=cert"
+2. `sudo trust anchor --remove "pkcs11:id=%AA%BB%CC%DD%EE;type=cert"`
 
 Source:
 
@@ -32,9 +32,9 @@ https://unix.stackexchange.com/questions/103037/what-tool-can-i-use-to-sniff-htt
 
 https://gist.github.com/franciscocpg/a4f52afcc00d472a9d7c407db16a92ee
 
-## Sniff traffic from Android phone
+# Sniff traffic from Android phone
 
-### Install certificate on the phone
+## Install certificate on the phone
 
 1. Copy ~/.mitmproxy/mitmproxy-ca-cert.cer to the phone
 
@@ -54,7 +54,12 @@ Starting from Android 24 (7.0) the certificate must be installed in the system t
 
 Firefox does not use system certificates and the certificate must be imported to Firefox.
 
-### Setup a proxy on the phone
+## Option 1 - regular proxy
+
+Regular proxy works with most apps, but not with not all of them (TCP stream and/or Mono apps).
+But it's easy to enable.
+
+On the phone:
 
 1. Go to the wifi settings
 
@@ -62,6 +67,34 @@ Firefox does not use system certificates and the certificate must be imported to
 
 3. Put computer's IP and port (8080)
 
-### Run mitmproxy as regular proxy
+Run mitmproxy as regular proxy:
 
-1. mitmproxy
+1. `mitmproxy`
+
+## Option 2 - transparent proxy
+
+On the phone:
+
+1. Got to the wifi settings, static IP
+
+2. Put your PC's IP address as the default gateway
+
+On PC - these settings will not be persistent after reset:
+
+1. Enable IP forwarding and disable ICMP redirects:
+
+`sysctl -w net.ipv4.ip_forward=1`
+`sysctl -w net.ipv6.conf.all.forwarding=1`
+`sysctl -w net.ipv4.conf.all.send_redirects=0`
+
+2. Redirect the desired traffic to mitmproxy:
+
+`iptables -t nat -A PREROUTING -i eno1 -p tcp --dport 1:65535 -j REDIRECT --to-port 8080`
+`ip6tables -t nat -A PREROUTING -i eno1 -p tcp --dport 1:65535 -j REDIRECT --to-port 8080`
+
+where `eno1` is the interface name (may be different for you, verify with `ifconfig`)
+and `1:65535` is port range (you may alternatively provide single port like `443` and `80`)
+
+3. Run mitmproxy with transparent mode:
+
+`mitmproxy --mode transparent --showhost`
