@@ -89,14 +89,14 @@ On PC - these settings will not be persistent after reset:
 
 1. Enable IP forwarding and disable ICMP redirects:
 
-`sysctl -w net.ipv4.ip_forward=1`
-`sysctl -w net.ipv6.conf.all.forwarding=1`
-`sysctl -w net.ipv4.conf.all.send_redirects=0`
+   - `sudo sysctl -w net.ipv4.ip_forward=1`
+   - `sudo sysctl -w net.ipv6.conf.all.forwarding=1`
+   - `sudo sysctl -w net.ipv4.conf.all.send_redirects=0`
 
 2. Redirect the desired traffic to mitmproxy:
 
-`iptables -t nat -A PREROUTING -i eno1 -p tcp --dport 1:65535 -j REDIRECT --to-port 8080`
-`ip6tables -t nat -A PREROUTING -i eno1 -p tcp --dport 1:65535 -j REDIRECT --to-port 8080`
+   - `sudo iptables -t nat -A PREROUTING -i eno1 -p tcp --dport 1:65535 -j REDIRECT --to-port 8080`
+   - `sudo ip6tables -t nat -A PREROUTING -i eno1 -p tcp --dport 1:65535 -j REDIRECT --to-port 8080`
 
 where `eno1` is the interface name (may be different for you, verify with `ifconfig`)
 and `1:65535` is port range (you may alternatively provide single port like `443` and `80`)
