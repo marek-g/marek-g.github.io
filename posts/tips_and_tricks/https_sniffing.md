@@ -4,27 +4,33 @@ title: HTTPS Sniffing
 parent: Tips & Tricks
 ---
 
-# HTTPS Sniffing with mitmproxy in reverse mode
+# Install mitmproxy
 
-1. Install mitmproxy
+1. Install `mitmproxy` with your package manager
 
-2. Run `mitmproxy` & exit (creates ~/.mitmproxy)
+# Generate self signed certificate
 
-3. `openssl x509 -in ~/.mitmproxy/mitmproxy-ca.pem -inform PEM -out ca.crt`
+1. Run `mitmproxy` & exit (creates ~/.mitmproxy with certificate valid for 10 years)
 
-4. `sudo trust anchor ca.crt`
+# Install certificate on Manjaro Linux
 
-5. `rm ca.crt`
+1. `openssl x509 -in ~/.mitmproxy/mitmproxy-ca.pem -inform PEM -out ca.crt`
 
-6. `mitmproxy --mode reverse:https://login.nestbank.pl/ -p 4433`
+2. `sudo trust anchor ca.crt`
 
-7. Connect to "https://localhost:4433"
+3. `rm ca.crt`
 
 Remove certificate after usage:
 
 1. `trust list`
 
 2. `sudo trust anchor --remove "pkcs11:id=%AA%BB%CC%DD%EE;type=cert"`
+
+# HTTPS Sniffing with mitmproxy in reverse mode
+
+1. `mitmproxy --mode reverse:https://login.nestbank.pl/ -p 4433`
+
+2. Connect to "https://localhost:4433"
 
 Source:
 
