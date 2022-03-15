@@ -49,3 +49,13 @@ Slow (90 fps for 1280x720), but the encoding quality is good.
 ```
 ffmpeg -i input.mkv -c:v libx264 -profile:v main -preset:v medium -b:v 1M output.mkv
 ```
+
+## Windows
+
+### Quick sync
+
+Quick sync decoding / scaling / encoding, QP:
+
+```
+ffmpeg -init_hw_device qsv=hw -hwaccel qsv -c:v h264_qsv -filter_hw_device hw -i "Stulecie Winnych 42 S04E03.mp4" -vf "hwupload=extra_hw_frames=64,format=qsv,scale_qsv=w=1280:h=720" -c:v h264_qsv -global_quality 31 -profile:v 100 -level 4.1 -c:a aac -b:a 96k output.mp4
+```
