@@ -33,13 +33,13 @@ When creating full system backup it is better to use `bsdtar` than `tar`. `tar` 
 4. Create backup:
 
     ```sh
-    sudo bsdtar --acls --xattrs -cpvf ../backup/<archive_name>.tar
+    sudo bsdtar --acls --xattrs -cpvf ../backup/<archive_name>.tar .
     ```
 
 5. Restore backup:
 
     ```sh
-    sudo bsdtar --acls --xattrs -xpvf ../backup/<archive_name>.tar
+    sudo bsdtar --acls --xattrs -xpvf ../backup/<archive_name>.tar .
     ```
 
 ## Archive user files
