@@ -46,34 +46,34 @@ When creating full system backup it is better to use `bsdtar` than `tar`. `tar` 
 
 To archive user files and folders on Linux (`tar` stores _owner/group_ of the file):
 
-    ```sh
-    tar -cf archive.tar -C <directory> .
-    ```
+```sh
+tar -cf archive.tar -C <directory> .
+```
 
 or
 
-    ```sh
-    tar -cf archive.tar <directory>
-    ```
+```sh
+tar -cf archive.tar <directory>
+```
 
 where `-C <path>` (change folder) can be used to not store full path names when whole mount point from some other place, for example:
 
-    ```sh
-    tar -cf 2021-08-18_listingi.tar -C /media/truecrypt1 .
-    ```
+```sh
+tar -cf 2021-08-18_listingi.tar -C /media/truecrypt1 .
+```
 
 ## Compress archive with password
 
 Compression:
 
-    ```sh
-    7z a -p -mhe=on archive.tar.7z archive.tar
-    ```
+```sh
+7z a -p -mhe=on archive.tar.7z archive.tar
+```
 
 and `-mhe=on` is for enabling header encryption (cannot list file names).
 
 Decompression:
 
-    ```sh
-    7z x archive.tar.7z
-    ```
+```sh
+7z x archive.tar.7z
+```
