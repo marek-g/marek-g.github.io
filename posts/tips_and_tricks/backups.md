@@ -6,9 +6,45 @@ parent: Tips & Tricks
 
 # Backups
 
-## Compressing files and folders
+## Archive system files to file
 
-To compress and encrypt files and folders on Linux (`tar` stores _owner/group_ of the file):
+When creating full system backup it is better to use `bsdtar` than `tar`. `tar` with `--xattrs` will not preserve extended properties.
+
+1. Boot from live USB.
+
+2. Mount source and destination file systems:
+
+```sh
+fdisk -l
+
+mkdir root
+sudo mount </dev/nvme0n1p5> root
+
+mkdir backup
+sudo mount </dev/sda4> backup
+```
+
+3. CD to source file system:
+
+```sh
+cd root
+```
+
+4. Create backup:
+
+```sh
+sudo bsdtar --acls --xattrs -cpvf ../backup/<archive_name>.tar
+```
+
+5. Restore backup:
+
+```sh
+sudo bsdtar --acls --xattrs -xpvf ../backup/<archive_name>.tar
+```
+
+## Archive user files
+
+To archive user files and folders on Linux (`tar` stores _owner/group_ of the file):
 
 ```
 tar -cf archive.tar -C <directory> .
@@ -26,7 +62,9 @@ where `-C <path>` (change folder) can be used to not store full path names when 
 tar -cf 2021-08-18_listingi.tar -C /media/truecrypt1 .
 ```
 
-and then
+## Compress archive with password
+
+Compression:
 
 ```
 7z a -p -mhe=on archive.tar.7z archive.tar
