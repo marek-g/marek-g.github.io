@@ -155,4 +155,4 @@ Now the system should be bootable from `ZFSBootMenu`.
 If after boot the filesystem is readonly, you can load it by adding `rw` to the kernel command line (`CTRL+E` in `ZFSBootMenu`). After the system is loaded you can set it as persistent with:
 
 - call `cat /proc/cmdline` to see what's the current command line is, for example: `zfs=rpool_ssd/manjaro/root nvidia-drm.modeset=1 spl.spl_hostid=0x00bab10c`
-- call `sudo zfs set org.zfsbootmenu:commandline="<OLD_COMMAND_LINE_WITHOUT_ZFS_PART> rw" rpool_ssd/manjaro`, for example: `sudo zfs set org.zfsbootmenu:commandline="nvidia-drm.modeset=1 spl.spl_hostid=0x00bab10c rw" rpool_ssd/manjaro`
+- call `sudo zfs set org.zfsbootmenu:commandline="<OLD_COMMAND_LINE_WITHOUT_ZFS_PART> rw" rpool_ssd/manjaro/root`, for example: `sudo zfs set org.zfsbootmenu:commandline="nvidia-drm.modeset=1 spl.spl_hostid=0x00bab10c rw" rpool_ssd/manjaro/root`
