@@ -83,4 +83,72 @@ sudo zfs mount rpool_ssd/manjaro/home
 
 ## Copy system files
 
+## Update system configuration
 
+Information to boot loaders where to find root file system:
+
+```sh
+sudo zpool set bootfs=rpool_ssd/manjaro/root rpool_ssd
+```
+
+Copy the zpool cache file:
+
+```sh
+sudo zpool set cachefile=/etc/zfs/zpool.cache rpool_ssd
+
+sudo mkdir -p /mnt/etc/zfs
+sudo cp /etc/zfs/zpool.cache /mnt/etc/zfs/zpool.cache
+```
+
+Chroot to the system:
+
+```sh
+sudo chroot /mnt
+
+mount -t proc proc /proc
+mount -t sysfs sys /sys
+mount -t devtmpfs udev /dev
+```
+
+Edit `/etc/mkinitcpio.conf` file and add `zfs` to `HOOKS` before `filesystems` and move `keyboard` hook before `zfs`. If you are not using `ext4` you can remove `fsck`, for example:
+
+```
+HOOKS=(base udev autodetect modconf block keyboard zfs filesystems)
+```
+
+Regenerate initramfs:
+
+```sh
+mkinitcpio -P
+```
+
+Comment out old root and home partitions from `/etc/fstab`.
+
+Enable necessary services for automatically mounting zfs datasets:
+
+```sh
+sudo systemctl enable zfs.target
+sudo systemctl enable zfs-import-cache
+sudo systemctl enable zfs-mount
+sudo systemctl enable zfs-import.target
+```
+
+Exit from chroot:
+
+```sh
+umount /dev
+umount /sys
+umount /proc
+exit
+```
+
+## Unexport ZFS pool
+
+```sh
+sudo zfs unmount -a
+sudo zpool export rpool_ssd
+```
+
+## Reboot
+
+Now the system should be bootable from `ZFSBootMenu`.
