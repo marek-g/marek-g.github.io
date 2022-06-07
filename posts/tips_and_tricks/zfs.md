@@ -156,3 +156,6 @@ If after boot the filesystem is readonly, you can load it by adding `rw` to the 
 
 - call `cat /proc/cmdline` to see what's the current command line is, for example: `zfs=rpool_ssd/manjaro/root nvidia-drm.modeset=1 spl.spl_hostid=0x00bab10c`
 - call `sudo zfs set org.zfsbootmenu:commandline="<OLD_COMMAND_LINE_WITHOUT_ZFS_PART> rw" rpool_ssd/manjaro/root`, for example: `sudo zfs set org.zfsbootmenu:commandline="nvidia-drm.modeset=1 spl.spl_hostid=0x00bab10c rw" rpool_ssd/manjaro/root`
+
+You can set this property on the parent dataset (`rpool_ssd/manjaro`) and `inherit` it for `rpool_ssd/manjaro/root` (please verify if the property is set for it, if it is just unset it with `inherit` command).
+
