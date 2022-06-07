@@ -78,7 +78,6 @@ sudo zpool export rpool_ssd
 
 sudo zpool import -d /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2041D4801869-part5 -R /mnt rpool_ssd
 sudo zfs mount rpool_ssd/manjaro/root
-sudo zfs mount rpool_ssd/manjaro/home
 ```
 
 ## Copy system files
@@ -145,7 +144,7 @@ exit
 ## Unexport ZFS pool
 
 ```sh
-sudo zfs unmount -a
+sudo zfs umount rpool_ssd/manjaro/root
 sudo zpool export rpool_ssd
 ```
 
