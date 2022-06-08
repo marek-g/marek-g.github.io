@@ -1,10 +1,11 @@
 ---
 layout: page
-title: ZFS
-parent: Tips & Tricks
+title: Migrate Linux to ZFS
+parent: ZFS
+grand_parent: Tips & Tricks
 ---
 
-# ZFS
+# Migrate Linux to ZFS
 
 Some steps I have followed to run Manjaro Linux from ZFS partition.
 
