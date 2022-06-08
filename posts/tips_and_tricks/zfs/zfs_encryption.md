@@ -34,3 +34,10 @@ sudo zfs mount rpool_ssd/encrypted/ext
 sudo zfs umount rpool_ssd/encrypted/ext
 sudo zfs unload-key -r rpool_ssd/encrypted
 ```
+
+## Set folder permissions after mount
+
+```sh
+sudo chmod -R 0700 /home/marek/Ext
+sudo chown marek:marek /home/marek/Ext
+```
