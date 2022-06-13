@@ -49,12 +49,12 @@ Useful EFI boot loaders: rEFInd (to choose between Windows & Linux), ZFSBootMenu
 
 ## Partitions
 
-Created partition with type = 0xBF00 (Solaris Root). To change partition type you can use fdisk. Solaris root partition type in fdisk is 156.
+Created partition with type = 0xBF00 (Solaris Root). To change partition type you can use fdisk. Solaris root partition type in fdisk is 156. You can add it a label, for example "Linux" for easier identification during filesystem import.
 
 ## Create ZFS pool on the partition
 
 ```sh
-sudo zpool create -f -o ashift=12 -o autotrim=on -O acltype=posixacl -O xattr=sa -O atime=off -O relatime=off -O recordsize=256k -O dnodesize=auto -O normalization=formD -O mountpoint=none -O canmount=off -O devices=off -O compression=zstd-3 ssd /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2041D4801869-part5
+sudo zpool create -f -o ashift=12 -o autotrim=on -O acltype=posixacl -O xattr=sa -O atime=off -O relatime=off -O recordsize=256k -O dnodesize=auto -O normalization=formD -O mountpoint=none -O canmount=off -O devices=off -O compression=zstd-3 ssd /dev/disk/by-partlabel/Linux
 ```
 Create containers:
 
@@ -81,7 +81,7 @@ zfs list
 sudo zfs umount -a
 sudo zpool export ssd
 
-sudo zpool import -d /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2041D4801869-part5 -R /mnt ssd
+sudo zpool import -d /dev/disk/by-partlabel/Linux -R /mnt ssd
 sudo zfs mount ssd/manjaro/root
 ```
 
