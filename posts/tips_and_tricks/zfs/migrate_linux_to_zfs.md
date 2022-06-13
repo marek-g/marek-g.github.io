@@ -9,6 +9,10 @@ grand_parent: Tips & Tricks
 
 Some steps I have followed to run Manjaro Linux from ZFS partition.
 
+## Backup system
+
+Make a backup of the system for example with `bsdtar` command as described on Backups pages. One important thing is to make sure that system has installed `linuxNN-zfs` and `zfs-utlis` modules.
+
 ## Create Manjaro Live CD with zfs support
 
 More info: https://wiki.manjaro.org/index.php/Build_Manjaro_ISOs_with_buildiso
@@ -50,19 +54,19 @@ Created partition with type = 0xBF00 (Solaris Root). To change partition type yo
 ## Create ZFS pool on the partition
 
 ```sh
-sudo zpool create -f -o ashift=12 -o autotrim=on -O acltype=posixacl -O xattr=sa -O atime=off -O relatime=off -O recordsize=256k -O dnodesize=auto -O normalization=formD -O mountpoint=none -O canmount=off -O devices=off -O compression=zstd-3 rpool_ssd /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2041D4801869-part5
+sudo zpool create -f -o ashift=12 -o autotrim=on -O acltype=posixacl -O xattr=sa -O atime=off -O relatime=off -O recordsize=256k -O dnodesize=auto -O normalization=formD -O mountpoint=none -O canmount=off -O devices=off -O compression=zstd-3 ssd /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2041D4801869-part5
 ```
 Create containers:
 
 ```sh
-sudo zfs create -o canmount=off -o mountpoint=none rpool_ssd/manjaro
+sudo zfs create -o canmount=off -o mountpoint=none ssd/manjaro
 ```
 
 Create datasets
 
 ```sh
-sudo zfs create -o canmount=noauto -o mountpoint=/ rpool_ssd/manjaro/root
-sudo zfs create -o mountpoint=/home rpool_ssd/manjaro/home
+sudo zfs create -o canmount=noauto -o mountpoint=/ ssd/manjaro/root
+sudo zfs create -o mountpoint=/home ssd/manjaro/home
 ```
 
 Verify:
@@ -75,10 +79,10 @@ zfs list
 
 ```sh
 sudo zfs umount -a
-sudo zpool export rpool_ssd
+sudo zpool export ssd
 
-sudo zpool import -d /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2041D4801869-part5 -R /mnt rpool_ssd
-sudo zfs mount rpool_ssd/manjaro/root
+sudo zpool import -d /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2041D4801869-part5 -R /mnt ssd
+sudo zfs mount ssd/manjaro/root
 ```
 
 ## Copy system files
@@ -88,13 +92,13 @@ sudo zfs mount rpool_ssd/manjaro/root
 Information to boot loaders where to find root file system:
 
 ```sh
-sudo zpool set bootfs=rpool_ssd/manjaro/root rpool_ssd
+sudo zpool set bootfs=ssd/manjaro/root ssd
 ```
 
 Copy the zpool cache file:
 
 ```sh
-sudo zpool set cachefile=/etc/zfs/zpool.cache rpool_ssd
+sudo zpool set cachefile=/etc/zfs/zpool.cache ssd
 
 sudo mkdir -p /mnt/etc/zfs
 sudo cp /etc/zfs/zpool.cache /mnt/etc/zfs/zpool.cache
@@ -145,8 +149,8 @@ exit
 ## Unexport ZFS pool
 
 ```sh
-sudo zfs umount rpool_ssd/manjaro/root
-sudo zpool export rpool_ssd
+sudo zfs umount ssd/manjaro/root
+sudo zpool export ssd
 ```
 
 ## Reboot
@@ -155,8 +159,8 @@ Now the system should be bootable from `ZFSBootMenu`.
 
 If after boot the filesystem is readonly, you can load it by adding `rw` to the kernel command line (`CTRL+E` in `ZFSBootMenu`). After the system is loaded you can set it as persistent with:
 
-- call `cat /proc/cmdline` to see what's the current command line is, for example: `zfs=rpool_ssd/manjaro/root nvidia-drm.modeset=1 spl.spl_hostid=0x00bab10c`
-- call `sudo zfs set org.zfsbootmenu:commandline="<OLD_COMMAND_LINE_WITHOUT_ZFS_PART> rw" rpool_ssd/manjaro/root`, for example: `sudo zfs set org.zfsbootmenu:commandline="nvidia-drm.modeset=1 spl.spl_hostid=0x00bab10c rw" rpool_ssd/manjaro/root`
+- call `cat /proc/cmdline` to see what's the current command line is, for example: `zfs=ssd/manjaro/root nvidia-drm.modeset=1 spl.spl_hostid=0x00bab10c`
+- call `sudo zfs set org.zfsbootmenu:commandline="<OLD_COMMAND_LINE_WITHOUT_ZFS_PART> rw" ssd/manjaro/root`, for example: `sudo zfs set org.zfsbootmenu:commandline="nvidia-drm.modeset=1 spl.spl_hostid=0x00bab10c rw" ssd/manjaro/root`
 
-You can set this property on the parent dataset (`rpool_ssd/manjaro`) and `inherit` it for `rpool_ssd/manjaro/root` (please verify if the property is set for it, if it is just unset it with `inherit` command).
+You can set this property on the parent dataset (`ssd/manjaro`) and `inherit` it for `ssd/manjaro/root` (please verify if the property is set for it, if it is just unset it with `inherit` command).
 
