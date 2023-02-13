@@ -21,6 +21,10 @@ Termux has this path embedded in its packages.
 
 The idea is to use `sharedUserId` manifest attribute in both packages to share the same Android user, so the packages can access both data folders.
 
+## Prebuilt binaries
+
+If you don't want to make below steps manually, you can use my prebuilt packages: https://github.com/marek-g/doom-emacs-config/releases/tag/Android_2023-02-13
+
 ## Termux steps
 
 Termux already has configured `sharedUserId`. However, both packages need to be signed with the same certificate, so we need to resign Termux APK with our own certificate (we assume you have already generated one). If you want to install more Termux packages, you will have to resign them all.
