@@ -23,7 +23,7 @@ The idea is to use `sharedUserId` manifest attribute in both packages to share t
 
 ## Prebuilt binaries
 
-If you don't want to make below steps manually, you can use my prebuilt packages: https://github.com/marek-g/doom-emacs-config/releases/tag/Android_2023-02-13
+If you don't want to make below steps manually, you can use my [prebuilt packages](https://github.com/marek-g/doom-emacs-config/releases/tag/Android_2023-02-13).
 
 ## Termux steps
 
