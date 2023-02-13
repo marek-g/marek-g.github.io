@@ -6,7 +6,7 @@ parent: Tips & Tricks
 
 # Emacs on Android - use with Termux
 
-This page describes how to use Emacs for Android with Termux. You can then use all the usefull tools like `git`, search tools and even programming languages.
+This page describes how to use Emacs for Android with Termux. You can then use all the useful tools like `git`, search tools and even programming languages.
 
 Normally, Emacs keeps its data at:
 ```
