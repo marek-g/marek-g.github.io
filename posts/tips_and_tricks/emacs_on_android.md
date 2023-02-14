@@ -48,10 +48,18 @@ Termux already has configured `sharedUserId`. However, both packages need to be 
 Now you can install both APKs. Emacs will be able to use files in `/data/data/com.termux/` folder.
 
 You can setup path environment to include Termux binaries by creating `~/.emacs.d/early-init.el` file:
+
 ```elisp
 ;; Add Termux binaries to PATH environment
 (setenv "PATH"
   (let ((current (getenv "PATH"))
         (new "/data/data/com.termux/files/usr/bin"))
     (if current (concat new ":" current) new)))
+```
+
+For `magit` you also need to set `magit-git-executable` variable:
+
+```elisp
+(when (string-equal system-type "android")
+  (setq magit-git-executable "/data/data/com.termux/files/usr/bin/git"))
 ```
