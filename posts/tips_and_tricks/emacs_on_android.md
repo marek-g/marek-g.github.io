@@ -53,6 +53,6 @@ You can setup path environment to include Termux binaries by creating `~/.emacs.
 ;; Add Termux binaries to PATH environment
 (when (string-equal system-type "android")
   (let ((termuxpath "/data/data/com.termux/files/usr/bin"))
-    (setenv "PATH" (concat (getenv "PATH") termuxpath))
+    (setenv "PATH" (concat (getenv "PATH") ":" termuxpath))
     (setq exec-path (append exec-path (list termuxpath)))))
 ```
