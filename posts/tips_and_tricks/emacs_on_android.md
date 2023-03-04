@@ -51,15 +51,8 @@ You can setup path environment to include Termux binaries by creating `~/.emacs.
 
 ```elisp
 ;; Add Termux binaries to PATH environment
-(setenv "PATH"
-  (let ((current (getenv "PATH"))
-        (new "/data/data/com.termux/files/usr/bin"))
-    (if current (concat new ":" current) new)))
-```
-
-For `magit` you also need to set `magit-git-executable` variable:
-
-```elisp
 (when (string-equal system-type "android")
-  (setq magit-git-executable "/data/data/com.termux/files/usr/bin/git"))
+  (let ((termuxpath "/data/data/com.termux/files/usr/bin"))
+    (setenv "PATH" (concat (getenv "PATH") termuxpath))
+    (setq exec-path (append exec-path (list termuxpath)))))
 ```
