@@ -66,7 +66,7 @@ You can setup path environment to include Termux binaries by creating `~/.emacs.
   ;;
   ;; TODO: investigate how to provide certificates.
   (setq tls-program '("gnutls-cli --insecure -p %p %h"
-          "gnutls-cli --x509cafile /data/data/com.termux/files/usr/etc/tls/cert.pem -p %p %h --protocols ssl3"
+          "gnutls-cli --insecure -p %p %h --protocols ssl3"
           "openssl s_client -connect %h:%p -no_ssl2 -ign_eof"))
 )
 ```
