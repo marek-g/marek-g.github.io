@@ -50,9 +50,23 @@ Now you can install both APKs. Emacs will be able to use files in `/data/data/co
 You can setup path environment to include Termux binaries by creating `~/.emacs.d/early-init.el` file:
 
 ```elisp
-;; Add Termux binaries to PATH environment
 (when (string-equal system-type "android")
+  ;; Add Termux binaries to PATH environment
   (let ((termuxpath "/data/data/com.termux/files/usr/bin"))
     (setenv "PATH" (concat (getenv "PATH") ":" termuxpath))
-    (setq exec-path (append exec-path (list termuxpath)))))
+    (setq exec-path (append exec-path (list termuxpath))))
+
+  ;; Fix SSL connection.
+  ;;
+  ;; Android port is builded without gnutls support and uses 'gnutls-cli' command.
+  ;; 'gnutls' command line must be installed in Termux.
+  ;; This replaces '%t' (filepath with trused certificates) from original command line, as it causes the error
+  ;; with '--insecure'. "--x509cafile /data/data/com.termux/files/usr/etc/tls/cert.pem' was also not working".
+  ;; 'openssl' is not working at all.
+  ;;
+  ;; TODO: investigate how to provide certificates.
+  (setq tls-program '("gnutls-cli --insecure -p %p %h"
+          "gnutls-cli --x509cafile /data/data/com.termux/files/usr/etc/tls/cert.pem -p %p %h --protocols ssl3"
+          "openssl s_client -connect %h:%p -no_ssl2 -ign_eof"))
+)
 ```
