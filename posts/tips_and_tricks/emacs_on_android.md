@@ -39,7 +39,12 @@ Termux already has configured `sharedUserId`. However, both packages need to be 
 1. Download Emacs APK (e.g. from F-Droid).
 1. Unpack: `apktool d <emacs.apk>`.
 1. Add `android:sharedUserId="com.termux" android:sharedUserLabel="@string/shared_user_label"` to Emacs' `AndroidManifest.xml`.
-1. Copy `@string/shared_user_label` from Termux's `res/values/strings.xml` to Emacs' resources.
+1. Copy `@string/shared_user_label` from Termux's `res/values/strings.xml` to Emacs' resources. The content should be like this:
+   ```
+   <resources>
+    <string name="shared_user_label">Termux user</string>
+   </resources>
+   ```
 1. Build new APK for Emacs: `apktool b emacs_and_termux -o emacs_for_termux.apk`.
 1. Sign the APK: `jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/.android/debug.keystore emacs_for_termux.apk androiddebugkey`.
 
@@ -54,18 +59,23 @@ You can setup path environment to include Termux binaries by creating `~/.emacs.
   ;; Add Termux binaries to PATH environment
   (let ((termuxpath "/data/data/com.termux/files/usr/bin"))
     (setenv "PATH" (concat (getenv "PATH") ":" termuxpath))
-    (setq exec-path (append exec-path (list termuxpath))))
+    (setq exec-path (append exec-path (list termuxpath)))))
+```
 
-  ;; Fix SSL connection.
-  ;;
-  ;; Android port is builded without gnutls support and uses 'gnutls-cli' command.
-  ;; 'gnutls' command line must be installed in Termux.
-  ;; This removes '%t' (filepath with trused certificates) from original command line, as it causes the error.
-  ;; "--x509cafile /data/data/com.termux/files/usr/etc/tls/cert.pem' was also not working".
-  ;; 'openssl' is not working at all.
+The best source to get Emacs binaries for Android is: https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/.
+But if you are using Emacs build from F-Droid you may want to configure `gnutls-cli` program to have access to SSL sites (like Melpa), because it's compiled without GnuTLS library support:
+
+```elisp
+;; Fix SSL connection for F-Droid version of Emacs.
+;;
+;; Android port is builded without gnutls support and uses 'gnutls-cli' command.
+;; 'gnutls' command line must be installed in Termux.
+;; This removes '%t' (filepath with trused certificates) from original command line, as it causes the error.
+;; "--x509cafile /data/data/com.termux/files/usr/etc/tls/cert.pem' was also not working".
+;; 'openssl' is not working at all.
+(when (string-equal system-type "android")
   (setq tls-program '("gnutls-cli -p %p %h"
           "gnutls-cli -p %p %h --protocols ssl3"
           ;"openssl s_client -connect %h:%p -no_ssl2 -ign_eof"
-  ))
-)
+  )))
 ```
