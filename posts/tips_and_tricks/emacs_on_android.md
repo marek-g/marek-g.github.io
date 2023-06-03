@@ -36,12 +36,13 @@ Termux already has configured `sharedUserId`. However, both packages need to be 
 
 ## Emacs steps
 
-1. Download Emacs APK (e.g. from F-Droid).
+1. Download Emacs APK (e.g. from [sourceforge](https://sourceforge.net/projects/android-ports-for-gnu-emacs/files/)).
 1. Unpack: `apktool d <emacs.apk>`.
 1. Add `android:sharedUserId="com.termux" android:sharedUserLabel="@string/shared_user_label"` to Emacs' `AndroidManifest.xml`.
 1. Copy `@string/shared_user_label` from Termux's `res/values/strings.xml` to Emacs' resources. The content should be like this:
    ```
    <resources>
+    ...
     <string name="shared_user_label">Termux user</string>
    </resources>
    ```

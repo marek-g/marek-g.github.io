@@ -17,6 +17,9 @@ and reboot.
 
 # Install driver
 
+Binary
+https://github.com/openzfsonwindows/openzfs/releases
+
 # Test the driver
 
 ```shell
@@ -36,7 +39,7 @@ wmic diskdrive list brief
 # Create pool
 
 ```shell
-zpool create -O casesensitivity=insensitive -o ashift=12 -O atime=off -o feature@zilsaxattr=disabled -o feature@head_errlog=disabled -o feature@blake3=disabled -o feature@block_cloning=disabled -O compression=zstd-3 zfswin disk
+zpool create -O casesensitivity=insensitive -o ashift=12 -O atime=off -O recordsize=256k -o feature@zilsaxattr=disabled -o feature@head_errlog=disabled -o feature@blake3=disabled -o feature@block_cloning=disabled -O compression=zstd-3 zfswin disk
 
 zpool create -O casesensitivity=insensitive -o ashift=12 -O acltype=posixacl -O xattr=sa -O atime=off -O relatime=off -O recordsize=256k -O dnodesize=auto -O normalization=formD -o feature@zilsaxattr=disabled -o feature@head_errlog=disabled -o feature@blake3=disabled -o feature@block_cloning=disabled -O compression=zstd-3 zfswin disk
 ```
