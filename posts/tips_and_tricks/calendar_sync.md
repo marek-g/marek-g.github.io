@@ -1,4 +1,4 @@
-	---
+---
 layout: page
 title: Calendar Synchronization
 parent: Tips & Tricks
@@ -23,7 +23,18 @@ sudo systemctl enable radicale
 sudo systemctl start radicale
 ```
 
-If you want to run it as a user, follow the instructions from Radicale page: [Linux with systemd as a user](https://radicale.org/v3.html#linux-with-systemd-as-a-user). Copy and modify `config`, `rights`, `user` files from `/etc/radicale`.
+If you want to run it as a user, follow the instructions from Radicale page: [Linux with systemd as a user](https://radicale.org/v3.html#linux-with-systemd-as-a-user). Copy and modify `config`, `rights`, `user` files from `/etc/radicale`. To manage service:
+
+``` shell
+# Enable the service
+systemctl --user enable radicale
+# Start the service
+systemctl --user start radicale
+# Check the status of the service
+systemctl --user status radicale
+# View all log messages
+journalctl --user --unit radicale.service
+```
 
 ### Restrict access
 
