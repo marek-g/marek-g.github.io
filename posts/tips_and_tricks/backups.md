@@ -30,16 +30,16 @@ When creating full system backup it is better to use `bsdtar` than `tar`. `tar` 
     cd root
     ```
 
-4. Create backup:
+4. Create backup (starting from current folder):
 
     ```sh
-    sudo bsdtar --acls --xattrs -cpvf ../backup/<archive_name>.tar .
+    sudo bsdtar --acls --xattrs -czpvf ../backup/<archive_name>.tar.gz .
     ```
 
-5. Restore backup:
+5. Restore backup (to current folder):
 
     ```sh
-    sudo bsdtar --acls --xattrs -xpvf ../backup/<archive_name>.tar
+    sudo bsdtar --acls --xattrs -xzpvf ../backup/<archive_name>.tar.gz
     ```
 
 ## Archive user files
