@@ -111,3 +111,41 @@ To configure this behavior all you need is:
    - Create .git/info/attributes file inside your local repository directory and add following line(s) to it: `*.<extension> filter=tabspace2` where `<extension>` is file extension than will be filtered.
 
 4. If you have any changes, commit them and then checkout all files to have filtered version on a disc: `git checkout HEAD -- **`
+
+## Encrypting
+
+Encrypting with [transcrypt](https://github.com/elasticdog/transcrypt).
+
+The steps to setup encrypted repo:
+
+```sh
+git init
+transcrypt
+```
+
+The password is stored locally in `.git/config` file.
+
+The patterns describing which files to encrypt are stored in `.gitattributes` file.
+
+The encrypted files will be all files in all subdirectories except the root folder. Also files with `.unencrypted` in their name will stay unencrypted.
+
+```
+#pattern  filter=crypt diff=crypt merge=crypt
+*/** filter=crypt diff=crypt merge=crypt
+*/*.unencrypted* !filter !diff !merge
+```
+
+Added all files to the repo:
+
+```sh
+git add .
+```
+
+Verified list of encrypted files:
+
+```sh
+transcrypt --list
+```
+
+And then normally commited and pushed the files.
+
