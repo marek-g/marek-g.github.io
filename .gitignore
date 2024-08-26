@@ -1,0 +1,5 @@
+# exclude Obsidian's settings (including plugin and hotkey configurations)
+.obsidian/
+
+# exclude Obsidian's trash (deleted notes)
+.trash/
