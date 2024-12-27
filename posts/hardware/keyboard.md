@@ -15,7 +15,7 @@ Paste this JSON data to `Raw data` tab:
 [{c:"#AAAA00",w:1.5},"Tab",{c:"#222222",t:"#666666\n\n#ff8800"},"Q\n\n`","W\n\n<","E\n\n>","R\n\n\"","T\n\n.",{x:2.75,w:1.5},"Y\n\n&","U\n\n_","I\n\n[","O\n\n]","P\n\n%",{t:"#666666"},"{\n[","}\n]","|\n\\","I","O","P","{\n[","}\n]",{c:"#666666",t:"#222222",w:1.5},"|\n\\",{x:0.25},"Delete","End","PgDn",{x:0.25,c:"#222222",t:"#666666"},"7\nHome","8\n↑","9\nPgUp",{c:"#666666",t:"#222222",h:2},"+"],
 [{c:"#AAAA00",w:1.75,l:true},"Caps Lock",{c:"#222222",t:"#666666\n\n#ff8800"},"A\n\n!","S\n\n-","D\n\n+",{n:true},"F\n\n=","G\n\n#",{x:2.5,w:1.75,l:true},"H\n\n|","J\n\n:","K\n\n(","L\n\n)",{n:true},":\n;\n?",{t:"#666666"},"\"\n'",{c:"#AAAA00",t:"#222222"},"Enter",{n:true},"Enter",{c:"#222222",t:"#666666"},"K","L",":\n;","\"\n'",{c:"#666666",t:"#222222",w:2.25},"Enter",{x:3.5,c:"#222222",t:"#666666"},"4\n←","5","6\n→"],
 [{c:"#AAAA00",t:"#222222",w:2.25},"Shift",{c:"#222222",t:"#666666\n\n#ff8800"},"Z\n\n^","X\n\n/","C\n\n*","V\n\n\\","B\n\n`",{x:2,w:2.25},"N\n\n~","M\n\n$","<\n,\n{",">\n.\n}","?\n/\n@",{c:"#AAAA00",t:"#222222"},"Shift","Shift",{c:"#222222",t:"#666666"},"M","<\n,",">\n.","?\n/",{c:"#666666",t:"#222222",w:2.75},"Shift",{x:1.25},"↑",{x:1.25,c:"#222222",t:"#666666"},"1\nEnd","2\n↓","3\nPgDn",{c:"#666666",t:"#222222",h:2},"Enter"],
-[{c:"#AAAA00",w:1.25},"Ctrl",{c:"#222222",t:"#666666",w:1.25},"Fn",{c:"#AAAA00",t:"#222222",w:1.25},"Alt","LAlt","Ctrl",{t:"#002040\n\n\n\n#ff8800",p:"DCS SPACE",a:7,w:2.25},"\n\n\n\nSYMBOLS LAYER",{x:1.25,t:"#222222",p:"DCS",a:4,w:1.25},"Delete",{w:1.25},"Backspace",{w:1.25},"Space",{p:"DCS SPACE",w:6.25},"RAlt",{c:"#666666",p:"DCS",w:1.25},"Alt",{w:1.25},"Win",{w:1.25},"Menu",{w:1.25},"Ctrl",{x:0.25},"←","↓","→",{x:0.25,c:"#222222",t:"#666666",w:2},"0\nIns",".\nDel"]
+[{c:"#AAAA00",w:1.25},"Ctrl",{c:"#222222",t:"#666666",w:1.25},"Fn",{c:"#AAAA00",t:"#222222",w:1.25},"Alt","LAlt","Ctrl",{c:"#ff8800",t:"#002040",p:"DCS SPACE",a:7,w:2.25},"\n\n\n\nSYMBOLS LAYER",{x:1.25,c:"#AAAA00",t:"#222222",p:"DCS",a:4,w:1.25},"Delete",{w:1.25},"Backspace",{w:1.25},"Space",{p:"DCS SPACE",w:6.25},"RAlt",{c:"#666666",p:"DCS",w:1.25},"Alt",{w:1.25},"Win",{w:1.25},"Menu",{w:1.25},"Ctrl",{x:0.25},"←","↓","→",{x:0.25,c:"#222222",t:"#666666",w:2},"0\nIns",".\nDel"]
 ```
 
 Keymapper configuration:
@@ -47,9 +47,15 @@ Keymapper configuration:
 #
 ###############################################################################
 
+[system = "Linux"]
 #FullSizeKeyboard = 'BY Tech Gaming Keyboard'
 FullSizeKeyboard = 'USB USB Keyboard'
 LeftHandKeyboard = 'Evision RGB Keyboard'
+
+[system = "Windows"]
+#FullSizeKeyboard = 'Gaming Keyboard'
+FullSizeKeyboard = 'USB Keyboard'
+LeftHandKeyboard = 'RGB Keyboard'
 
 ###############################################################################
 #
@@ -241,11 +247,14 @@ Thumb2 >> Backspace
 # notify user about turning SplitKeyboardMode on / off
 #
 
-[device = FullSizeKeyboard, system = "Linux"]
+[system = "Linux"]
+SplitKeyboardMode >> $(notify-send 'Split Keyboard Mode ON') ^ $(notify-send 'Split Keyboard Mode OFF')
 #SplitKeyboardMode >> $(hid_ctrl rk618 custom-colors 0F0:2 040:13 F00 040:5 00F:4 0F0:2 FF0:2 000:6 0F0:7 040:5 0F0:3 000:6 0F0:7 040 F00:4 040 FF0:2 000:6 0F0:7 040:6 FF0:2 000:6 0F0:7 FF0:2 F00:1 FF0:5 000:6 0F0:6) ^ $(hid_ctrl rk618 solid-color 0 255 0)
-SplitKeyboardMode >> $(notify-send 'SplitKeyboardMode ON') ^ $(notify-send 'SplitKeyboardMode OFF')
 #SplitKeyboardMode >> $(hid_ctrl rk618 custom-colors 0F0:1) ^ $(hid_ctrl rk618 solid-color 0 255 0)
 #SplitKeyboardMode >> $(hid_ctrl rk618 solid-color 255 0 0) ^ $(hid_ctrl rk618 solid-color 0 255 0)
+
+[system = "Windows"]
+SplitKeyboardMode >> $(msg * Split Keyboard Mode ON) ^ $(msg * Split Keyboard Mode OFF)
 
 #
 # define thumb clusters
@@ -269,6 +278,7 @@ Space >> ThumbRight4 ^ ThumbRight4
 SymbolsLayer = ThumbLeft1
 ThumbLeft2 >> ControlLeft
 ThumbLeft3 >> AltLeft
+Extend = ThumbLeft4
 ThumbRight1 >> Delete
 ThumbRight2 >> Backspace
 ThumbRight3 >> Space
@@ -321,6 +331,19 @@ N >> ShiftRight
 [stage]
 
 #
+# Extend key
+#
+
+Extend >>
+Extend{S}               >> Alt
+Extend{D}               >> Shift
+Extend{F} >> Control
+Extend{I}               >> ArrowUp
+Extend{K}               >> ArrowDown
+Extend{J}               >> ArrowLeft
+Extend{L}               >> ArrowRight
+
+#
 # symbols layer
 #
 # inspired by: https://getreuer.info/posts/keyboards/symbol-layer/index.html
@@ -370,7 +393,8 @@ Slash >> "@"
 #
 ###############################################################################
 
-[class=/emacs/i]
+#[class=/emacs/i]
+[title=/GNU Emacs/i]
 Hold[CapsLock] >> Control
 #Tap[CapsLock] >> Escape
 Escape >> Control{G}
@@ -387,5 +411,4 @@ Control{F} >> Control{S}                      ; search
 Control{W} >> Control{X} K                    ; kill buffer
 Control{Z} >> Control{X} U                    ; undo
 Control{Y} >> (Control AltLeft Shift){Minus}  ; redo
-# Keymapper configuration:1 ends here
 ```
