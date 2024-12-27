@@ -12,10 +12,10 @@ Paste this JSON data to `Raw data` tab:
 ``` json
 [{c:"#AAAA00",t:"#222222",p:"DCS"},"Esc",{x:1,c:"#222222",t:"#666666"},"F1","F2","F3","F4",{t:"#222222"},"F5",{x:2.25,c:"#666666"},"Esc",{x:1,c:"#222222",t:"#666666"},"F1","F2","F3","F4",{x:0.5,c:"#666666",t:"#222222"},"F5","F6","F7","F8",{x:0.5,c:"#222222",t:"#666666"},"F9","F10","F11","F12",{x:0.25,c:"#666666",t:"#222222"},"PrtSc","Scroll Lock","Pause\nBreak"],
 [{y:0.5,c:"#AAAA00"},"~\n`",{c:"#222222",t:"#666666"},"!\n1","@\n2","#\n3","$\n4","%\n5","^\n6",{x:2.25},"&\n7","*\n8","(\n9",")\n0","_\n-","+\n=",{c:"#AAAA00",t:"#222222"},"Backspace","Backspace",{c:"#222222",t:"#666666"},"*\n8","(\n9",")\n0","_\n-","+\n=",{c:"#666666",t:"#222222",w:2},"Backspace",{x:0.25},"Insert","Home","PgUp",{x:0.25},"Num Lock","/","*","-"],
-[{c:"#AAAA00",w:1.5},"Tab",{c:"#222222",t:"#666666\n\n#ff8800"},"Q\n\n`","W\n\n<","E\n\n>","R\n\n\"","T\n\n.",{x:2.75,w:1.5},"Y\n\n&","U\n\n_","I\n\n[","O\n\n]","P\n\n%",{t:"#666666"},"{\n[","}\n]","|\n\\","I","O","P","{\n[","}\n]",{c:"#666666",t:"#222222",w:1.5},"|\n\\",{x:0.25},"Delete","End","PgDn",{x:0.25,c:"#222222",t:"#666666"},"7\nHome","8\n↑","9\nPgUp",{c:"#666666",t:"#222222",h:2},"+"],
-[{c:"#AAAA00",w:1.75,l:true},"Caps Lock",{c:"#222222",t:"#666666\n\n#ff8800"},"A\n\n!","S\n\n-","D\n\n+",{n:true},"F\n\n=","G\n\n#",{x:2.5,w:1.75,l:true},"H\n\n|","J\n\n:","K\n\n(","L\n\n)",{n:true},":\n;\n?",{t:"#666666"},"\"\n'",{c:"#AAAA00",t:"#222222"},"Enter",{n:true},"Enter",{c:"#222222",t:"#666666"},"K","L",":\n;","\"\n'",{c:"#666666",t:"#222222",w:2.25},"Enter",{x:3.5,c:"#222222",t:"#666666"},"4\n←","5","6\n→"],
-[{c:"#AAAA00",t:"#222222",w:2.25},"Shift",{c:"#222222",t:"#666666\n\n#ff8800"},"Z\n\n^","X\n\n/","C\n\n*","V\n\n\\","B\n\n`",{x:2,w:2.25},"N\n\n~","M\n\n$","<\n,\n{",">\n.\n}","?\n/\n@",{c:"#AAAA00",t:"#222222"},"Shift","Shift",{c:"#222222",t:"#666666"},"M","<\n,",">\n.","?\n/",{c:"#666666",t:"#222222",w:2.75},"Shift",{x:1.25},"↑",{x:1.25,c:"#222222",t:"#666666"},"1\nEnd","2\n↓","3\nPgDn",{c:"#666666",t:"#222222",h:2},"Enter"],
-[{c:"#AAAA00",w:1.25},"Ctrl",{c:"#222222",t:"#666666",w:1.25},"Fn",{c:"#AAAA00",t:"#222222",w:1.25},"Alt","LAlt","Ctrl",{c:"#ff8800",t:"#002040",p:"DCS SPACE",a:7,w:2.25},"\n\n\n\nSYMBOLS LAYER",{x:1.25,c:"#AAAA00",t:"#222222",p:"DCS",a:4,w:1.25},"Delete",{w:1.25},"Backspace",{w:1.25},"Space",{p:"DCS SPACE",w:6.25},"RAlt",{c:"#666666",p:"DCS",w:1.25},"Alt",{w:1.25},"Win",{w:1.25},"Menu",{w:1.25},"Ctrl",{x:0.25},"←","↓","→",{x:0.25,c:"#222222",t:"#666666",w:2},"0\nIns",".\nDel"]
+[{c:"#AAAA00",w:1.5},"Tab",{c:"#222222",t:"#666666\n\n#ff8800"},"Q\n\n`","W\n\n<","E\n\n>","R\n\n\"","T\n\n.",{x:2.75,t:"#666666\n#0088ff\n#ff8800",w:1.5},"Y\nPgUp\n&","U\nHome\n_","I\n↑\n[","O\nEnd\n]","P\nDelete\n%",{t:"#666666"},"{\n[","}\n]","|\n\\","I","O","P","{\n[","}\n]",{c:"#666666",t:"#222222",w:1.5},"|\n\\",{x:0.25},"Delete","End","PgDn",{x:0.25,c:"#222222",t:"#666666"},"7\nHome","8\n↑","9\nPgUp",{c:"#666666",t:"#222222",h:2},"+"],
+[{c:"#AAAA00",w:1.75,l:true},"Caps Lock",{c:"#222222",t:"#666666\n\n#ff8800"},"A\n\n!",{t:"#666666\n#0088ff\n#ff8800"},"S\nAlt\n-","D\nShift\n+",{n:true},"F\nCtrl\n=",{t:"#666666\n\n#ff8800"},"G\n\n#",{x:2.5,t:"#666666\n#0088ff\n#ff8800",w:1.75,l:true},"H\nPgDn\n|","J\n←\n:","K\n↓\n(","L\n→\n)",{n:true},"; :\nBackspace\n?",{t:"#666666"},"\"\n'",{c:"#AAAA00",t:"#222222"},"Enter",{n:true},"Enter",{c:"#222222",t:"#666666"},"K","L",":\n;","\"\n'",{c:"#666666",t:"#222222",w:2.25},"Enter",{x:3.5,c:"#222222",t:"#666666"},"4\n←","5","6\n→"],
+[{c:"#AAAA00",t:"#222222",w:2.25},"Shift",{c:"#222222",t:"#666666\n#0088ff\n#ff8800\n\n\n\n#0088ff"},"Z\nUndo\n^\n\n\n\nRedo",{t:"#666666\n#0088ff\n#ff8800"},"X\nCut\n/","C\nCopy\n*","V\nPaste\n\\",{t:"#666666\n\n#ff8800"},"B\n\n`",{x:2,w:2.25},"N\n\n~","M\n\n$","<\n,\n{",">\n.\n}","?\n/\n@",{c:"#AAAA00",t:"#222222"},"Shift","Shift",{c:"#222222",t:"#666666"},"M","<\n,",">\n.","?\n/",{c:"#666666",t:"#222222",w:2.75},"Shift",{x:1.25},"↑",{x:1.25,c:"#222222",t:"#666666"},"1\nEnd","2\n↓","3\nPgDn",{c:"#666666",t:"#222222",h:2},"Enter"],
+[{c:"#AAAA00",w:1.25},"Ctrl",{c:"#222222",t:"#666666",w:1.25},"Fn",{c:"#AAAA00",t:"#222222",w:1.25},"LAlt","Ctrl",{c:"#ff8800",a:7},"\n\n\n\nSYMBOLS",{c:"#0088ff",t:"#002040",p:"DCS SPACE",w:2.25},"\n\n\n\nNAVIGATION",{x:1.25,c:"#AAAA00",t:"#222222",p:"DCS",a:4,w:1.25},"Delete",{w:1.25},"Backspace",{w:1.25},"Space",{p:"DCS SPACE",w:6.25},"RAlt",{c:"#666666",p:"DCS",w:1.25},"Alt",{w:1.25},"Win",{w:1.25},"Menu",{w:1.25},"Ctrl",{x:0.25},"←","↓","→",{x:0.25,c:"#222222",t:"#666666",w:2},"0\nIns",".\nDel"]
 ```
 
 Keymapper configuration:
@@ -56,6 +56,8 @@ LeftHandKeyboard = 'Evision RGB Keyboard'
 #FullSizeKeyboard = 'Gaming Keyboard'
 FullSizeKeyboard = 'USB Keyboard'
 LeftHandKeyboard = 'RGB Keyboard'
+
+[default]
 
 ###############################################################################
 #
@@ -100,84 +102,14 @@ ThumbRight2 = Virtual105
 ThumbRight3 = Virtual106
 ThumbRight4 = Virtual107
 
+###############################################################################
 #
 # Switch keyboard layouts
 #
+###############################################################################
+
 ScrollLock >> !OneHandMode SplitKeyboardMode
 Pause >> OneHandMode !SplitKeyboardMode
-
-# double tab CapsLock to toggle it
-#DoubleTap[CapsLock] >> Virtual1
-#Virtual1 >> ControlLeft)
-
-#Tap[CapsLock] >> Escape
-#	CapsLock      >> ControlLeft
-
-#DoubleTap[CapsLock] >> Virtual2
-#Hold[E] >> Virtual2 ^ Virtual2
-#Virtual2{I} >> ArrowUp
-#Virtual2{K} >> ArrowDown
-#Virtual2{J} >> ArrowLeft
-#Virtual2{L} >> ArrowRight
-#Virtual2{H} >> ControlLeft{ArrowLeft}
-#Virtual2{Semicolon} >> ControlLeft{ArrowRight}
-
-#Boss = Virtual1
-#ScrollLock >> Boss
-#Boss >> A
-
-#A >> Virtual2 ^ Virtual2
-#Virtual2 >> B
-
-#[modifier="!Boss"]
-#A >> B
-#B >> A
-
-#Hold[A]{Any} >> Shift{Any}
-#Tap[A] >> A
-
-#Hold[J] >> ControlLeft
-#Tap[J] >> J
-
-#J{Any} >> ControlLeft{Any}
-
-
-###
-#
-# Działająca wersja shifty to nawiasy,
-# ale psuje chyba opcję ctrl + shift + strzałki
-#
-##
-#ShiftLeft{Any} >> ShiftLeft{Any}
-#ShiftLeft >> "("
-#ShiftRight{Any} >> ShiftRight{Any}
-#ShiftRight >> ")"
-
-#Space{F} >> Control
-#Space{Any} >> Control{Any}
-
-#? Tap[Space] >> Space
-#Hold[Space] >> ControlLeft
-
-
-#Hold[ShiftLeft] >> ShiftLeft
-#Hold[ShiftLeft]{Any} >> ShiftLeft{Any}
-#Tap[ShiftLeft] >> "("
-
-#Hold[ShiftRight] >> ShiftRight
-#Tap[ShiftRight] >> ")"
-
-#Ext = CapsLock
-#Ext >>
-#Ext{S}               >> Alt
-#Ext{D}               >> Shift
-#Ext{F} >> Control
-#Ext{I}               >> ArrowUp
-#Ext{K}               >> ArrowDown
-#Ext{J}               >> ArrowLeft
-#Ext{L}               >> ArrowRight
-
-#CapsLock >> Backspace
 
 ###############################################################################
 #
@@ -256,6 +188,8 @@ SplitKeyboardMode >> $(notify-send 'Split Keyboard Mode ON') ^ $(notify-send 'Sp
 [system = "Windows"]
 SplitKeyboardMode >> $(msg * Split Keyboard Mode ON) ^ $(msg * Split Keyboard Mode OFF)
 
+[default]
+
 #
 # define thumb clusters
 #
@@ -275,10 +209,10 @@ Space >> ThumbRight4 ^ ThumbRight4
 [stage]
 
 [modifier="SplitKeyboardMode"]
-SymbolsLayer = ThumbLeft1
-ThumbLeft2 >> ControlLeft
-ThumbLeft3 >> AltLeft
-Extend = ThumbLeft4
+Ext = ThumbLeft1
+SymbolsLayer = ThumbLeft2
+ThumbLeft3 >> ControlLeft
+ThumbLeft4 >> AltLeft
 ThumbRight1 >> Delete
 ThumbRight2 >> Backspace
 ThumbRight3 >> Space
@@ -305,7 +239,7 @@ Backquote >> 7
 Tab >> Y
 Q >> U
 W >> I
-E >> O
+E >> O	
 R >> P
 T >> BracketLeft
 Y >> BracketRight
@@ -334,14 +268,48 @@ N >> ShiftRight
 # Extend key
 #
 
-Extend >>
-Extend{S}               >> Alt
-Extend{D}               >> Shift
-Extend{F} >> Control
-Extend{I}               >> ArrowUp
-Extend{K}               >> ArrowDown
-Extend{J}               >> ArrowLeft
-Extend{L}               >> ArrowRight
+Ext >>
+
+# modifiers
+Ext{S}    >> Alt
+Ext{D}    >> Shift
+Ext{F}    >> Control
+
+# cursor keys
+Ext{I}    >> ArrowUp
+Ext{K}    >> ArrowDown
+Ext{J}    >> ArrowLeft
+Ext{L}    >> ArrowRight
+Ext{U}    >> Home
+Ext{O}    >> End
+Ext{Y}    >> PageUp
+Ext{H}    >> PageDown
+
+Ext{Semicolon} >> Backspace
+Ext{Q}         >> Escape
+Ext{P}         >> Delete
+
+Ext{X}               >> edit_cut
+Ext{C}               >> edit_copy
+Ext{V}               >> edit_paste
+Ext{E}               >> find
+Ext{Z}               >> edit_undo
+(Ext Shift){Z}       >> edit_redo
+#Ext{F}               >> find
+
+# the Ext modifier together with other keys should have no effect
+Ext{Any}  >>
+
+#
+# default mappings for abstract commands
+#
+
+edit_copy            >> Control{C}
+edit_cut             >> Control{X}
+edit_paste           >> Control{V}
+edit_undo            >> Control{Z}
+edit_redo            >> Control{Y}
+find                 >> Control{F}
 
 #
 # symbols layer
