@@ -67,8 +67,8 @@ LeftHandKeyboard = 'RGB Keyboard'
 
 Combo     = $0 !250ms $1              ; press both keys almost immediatelly
 DoubleTap = $0 !250ms $0{!250ms}      ; dobule tap a key
-Tap       = $0{!250ms}  ; shorter than
-Hold      = $0{200ms}   ; longer than
+Tap       = $0{!250ms} ; shorter than
+Hold      = $0{200ms}  ; longer than
 
 ###############################################################################
 #
@@ -105,11 +105,11 @@ ThumbRight4 = Virtual17
 # Virtual Modifiers
 #
 
-ModifiersSelected = Virtual30
-AltLock = Virtual31
-ShiftLock = Virtual32
-CtrlLock = Virtual33
-WinLock = Virtual34
+ModifiersSelected = Virtual31
+AltLock = Virtual32
+ShiftLock = Virtual33
+CtrlLock = Virtual34
+WinLock = Virtual35
 
 ###############################################################################
 #
@@ -173,6 +173,7 @@ Space >> ThumbRight4 ^ ThumbRight4
 Space >> ThumbLeft1 ^ ThumbLeft1
 AltLeft >> ThumbLeft2 ^ ThumbLeft2
 AltRight >> ThumbRight1 ^ ThumbRight1
+Quote >> ThumbRight2 ^ ThumbRight2
 
 [stage]
 
@@ -189,7 +190,8 @@ ThumbRight4 >> AltRight
 
 [modifier="SingleKeyboardMode"]
 Ext = CapsLock
-Modifiers = ThumbLeft1
+Modifiers = ThumbRight2
+ThumbLeft1 >> Space
 SymbolsLayer = ThumbLeft2
 ThumbRight1 >> AltRight
 
@@ -309,8 +311,6 @@ Slash >> "@"
 #
 # Modifiers key
 #
-
-Tap[Modifiers] >> Space
 
 [modifier="Modifiers"]
 ContextActive >> ^ !ModifiersSelected !AltLock !ShiftLock !CtrlLock !WinLock
