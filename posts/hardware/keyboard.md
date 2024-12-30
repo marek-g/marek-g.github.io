@@ -105,7 +105,6 @@ ThumbRight4 = Virtual17
 # Virtual Modifiers
 #
 
-Modifiers = Virtual30
 ModifiersSelected = Virtual31
 AltLock = Virtual32
 ShiftLock = Virtual33
@@ -126,6 +125,8 @@ Tap[ScrollLock] >> !SplitKeyboardMode !SingleKeyboardMode
 Tap[ScrollLock] >> !SingleKeyboardMode SplitKeyboardMode
 ScrollLock{1} >> !SplitKeyboardMode SingleKeyboardMode
 ScrollLock{2} >> !SingleKeyboardMode SplitKeyboardMode
+
+[stage]
 
 #
 # notify user about turning SplitKeyboardMode on / off
@@ -159,7 +160,7 @@ SingleKeyboardMode >> $(msg * Single Keyboard Mode ON) ^ $(msg * Single Keyboard
 #
 
 [device = LeftHandKeyboard, modifier="SplitKeyboardMode"]
-Space >> Modifiers ^ Modifiers
+Space >> ThumbLeft1 ^ ThumbLeft1
 P >> ThumbLeft2 ^ ThumbLeft2
 N >> ThumbLeft3 ^ ThumbLeft3
 AltLeft >> ThumbLeft4 ^ ThumbLeft4
@@ -169,29 +170,33 @@ ControlLeft >> ThumbRight1 ^ ThumbRight1
 MetaLeft >> ThumbRight2 ^ ThumbRight2
 AltLeft >> ThumbRight3 ^ ThumbRight3
 Space >> ThumbRight4 ^ ThumbRight4
-G >> Modifiers ^ Modifiers
 
 [modifier="SingleKeyboardMode"]
-Space >> ThumbLeft1 ^ ThumbLeft1
 AltLeft >> ThumbLeft2 ^ ThumbLeft2
 AltRight >> ThumbRight1 ^ ThumbRight1
-Quote >> Modifiers ^ Modifiers
 
 [stage]
 
-[modifier="SplitKeyboardMode"]
-Ext = CapsLock
-SymbolsLayer = ThumbLeft2
-ThumbLeft3 >> ControlLeft
-ThumbLeft4 >> AltLeft
-ThumbRight1 >> Delete
-ThumbRight2 >> Backspace
-ThumbRight3 >> Space
-ThumbRight4 >> AltRight
+#
+# A bug?
+#
+# For Space & Modifiers to work correctly, I have to leave uncommented only one of the below 2 sections.
+#
+
+# [modifier="SplitKeyboardMode"]
+# Ext = CapsLock
+# SymbolsLayer = ThumbLeft2
+# Modifiers = ThumbLeft1
+# ThumbLeft3 >> ControlLeft
+# ThumbLeft4 >> AltLeft
+# ThumbRight1 >> Delete
+# ThumbRight2 >> Backspace
+# ThumbRight3 >> Space
+# ThumbRight4 >> AltRight
 
 [modifier="SingleKeyboardMode"]
 Ext = CapsLock
-ThumbLeft1 >> Space
+Modifiers = Space
 SymbolsLayer = ThumbLeft2
 ThumbRight1 >> AltRight
 
@@ -312,18 +317,49 @@ Slash >> "@"
 # Modifiers key
 #
 
-[modifier="Modifiers"]
+#Space{Any !Any} >> X
+
+#[modifier="SplitKeyboardMode"]
+#[modifier="SingleKeyboardMode"]
+#Modifiers{Any !Any} >> ShiftLeft{Any}
+
+#Modifiers{A !A} >> X
+#Space{Any !Any} >> ShiftLeft{Any}
+
+#Modifiers{Any !Any} >> X
+#Modifiers{A !A} >> X
+
+[modifier="SingleKeyboardMode !ModifiersSelected"]
+[modifier="SplitKeyboardMode !ModifiersSelected"]
+Modifiers{(S D F G) !S} >> AltLock ShiftLock CtrlLock WinLock ^ ModifiersSelected
+Modifiers{(S D F) !S} >> AltLock ShiftLock CtrlLock ^ ModifiersSelected
+Modifiers{(S D G) !S} >> AltLock ShiftLock WinLock ^ ModifiersSelected
+Modifiers{(D F G) !D} >> ShiftLock CtrlLock WinLock ^ ModifiersSelected
+Modifiers{(S D) !S} >> AltLock ShiftLock ^ ModifiersSelected
+Modifiers{(S F) !S} >> AltLock CtrlLock ^ ModifiersSelected
+Modifiers{(S G) !S} >> AltLock WinLock ^ ModifiersSelected
+Modifiers{(D F) !D} >> ShiftLock CtrlLock ^ ModifiersSelected
+Modifiers{(D F) !D} >> ShiftLock CtrlLock ^ ModifiersSelected
+Modifiers{(D G) !D} >> ShiftLock WinLock ^ ModifiersSelected
+Modifiers{(F G) !F} >> CtrlLock WinLock ^ ModifiersSelected
+Modifiers{S !S} >> AltLock ^ ModifiersSelected
+Modifiers{D !D} >> ShiftLock ^ ModifiersSelected
+Modifiers{F !F}>> CtrlLock ^ ModifiersSelected
+Modifiers{G !G}>> WinLock ^ ModifiersSelected
+
+[modifier="SingleKeyboardMode Modifiers"]
+[modifier="SplitKeyboardMode Modifiers"]
 ContextActive >> ^ !ModifiersSelected !AltLock !ShiftLock !CtrlLock !WinLock
 AltLock >> AltLeft
 ShiftLock >> ShiftLeft
 CtrlLock >> ControlLeft
 WinLock >> MetaLeft
 
-[modifier="Modifiers !ModifiersSelected"]
-S >> AltLock ^ ModifiersSelected
-D >> ShiftLock ^ ModifiersSelected
-F >> CtrlLock ^ ModifiersSelected
-G >> WinLock ^ ModifiersSelected
+#[modifier="Modifiers !ModifiersSelected"]
+#S >> AltLock ^ ModifiersSelected
+#D >> ShiftLock ^ ModifiersSelected
+#F >> CtrlLock ^ ModifiersSelected
+#G >> WinLock ^ ModifiersSelected
 
 [default]
 
