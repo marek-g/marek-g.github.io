@@ -105,6 +105,7 @@ ThumbRight4 = Virtual17
 # Virtual Modifiers
 #
 
+Modifiers = Virtual30
 ModifiersSelected = Virtual31
 AltLock = Virtual32
 ShiftLock = Virtual33
@@ -158,7 +159,7 @@ SingleKeyboardMode >> $(msg * Single Keyboard Mode ON) ^ $(msg * Single Keyboard
 #
 
 [device = LeftHandKeyboard, modifier="SplitKeyboardMode"]
-Space >> ThumbLeft1 ^ ThumbLeft1
+Space >> Modifiers ^ Modifiers
 P >> ThumbLeft2 ^ ThumbLeft2
 N >> ThumbLeft3 ^ ThumbLeft3
 AltLeft >> ThumbLeft4 ^ ThumbLeft4
@@ -168,18 +169,18 @@ ControlLeft >> ThumbRight1 ^ ThumbRight1
 MetaLeft >> ThumbRight2 ^ ThumbRight2
 AltLeft >> ThumbRight3 ^ ThumbRight3
 Space >> ThumbRight4 ^ ThumbRight4
+G >> Modifiers ^ Modifiers
 
 [modifier="SingleKeyboardMode"]
 Space >> ThumbLeft1 ^ ThumbLeft1
 AltLeft >> ThumbLeft2 ^ ThumbLeft2
 AltRight >> ThumbRight1 ^ ThumbRight1
-Quote >> ThumbRight2 ^ ThumbRight2
+Quote >> Modifiers ^ Modifiers
 
 [stage]
 
 [modifier="SplitKeyboardMode"]
 Ext = CapsLock
-Modifiers = ThumbLeft1
 SymbolsLayer = ThumbLeft2
 ThumbLeft3 >> ControlLeft
 ThumbLeft4 >> AltLeft
@@ -190,7 +191,6 @@ ThumbRight4 >> AltRight
 
 [modifier="SingleKeyboardMode"]
 Ext = CapsLock
-Modifiers = ThumbRight2
 ThumbLeft1 >> Space
 SymbolsLayer = ThumbLeft2
 ThumbRight1 >> AltRight
