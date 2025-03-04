@@ -22,11 +22,11 @@ cat /sys/class/drm/card0-HDMI-A-1/edid > EDID_LG_55_OLED.bin
 Example parameter (overrides EDIDs for multiple outputs):
 
 ``` shell
-drm.edid_firmware=DP-1:edid/EDID_AOC_Q32_50Hz.bin,DVI-D-2:edid/EDID_NEC_FA24_50Hz.bin,HDMI-A-1:edid/EDID_LG_55_OLED_50Hz.bin
+drm.edid_firmware=DP-1:edid/EDID_AOC_Q32_50Hz.bin,DVI-D-2:edid/EDID_NEC_EA24_50Hz.bin,HDMI-A-1:edid/EDID_LG_55_OLED_50Hz.bin
 ```
 
 When using zfs file system & `ZFSBootMenu` it can be set with zfs property (example from my desktop PC):
 
 ``` shell
-sudo zfs set org.zfsbootmenu:commandline="nvidia-drm.modeset=1 spl.spl_hostid=0x00bab10c rw drm.edid_firmware=DP-1:edid/EDID_AOC_Q32_50Hz.bin,DVI-D-2:edid/EDID_NEC_FA24_50Hz.bin,HDMI-A-1:edid/EDID_LG_55_OLED_50Hz.bin" ssd/manjaro
+sudo zfs set org.zfsbootmenu:commandline="nvidia-drm.modeset=1 spl.spl_hostid=0x00bab10c rw drm.edid_firmware=DP-1:edid/EDID_AOC_Q32_50Hz.bin,DVI-D-2:edid/EDID_NEC_EA24_50Hz.bin,HDMI-A-1:edid/EDID_LG_55_OLED_50Hz.bin" ssd/manjaro
 ```
