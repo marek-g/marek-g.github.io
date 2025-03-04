@@ -13,7 +13,9 @@ cat /sys/class/drm/card0-HDMI-A-1/edid | parse-edid
 cat /sys/class/drm/card0-HDMI-A-1/edid > EDID_LG_55_OLED.bin
 ```
 
-- Edit `bin` file and add custom resolutions with `Custom Resoltion Utility` (CRU) Windows app (runs fine in Wine).
+- Edit `bin` file and add custom resolutions with `Custom Resoltion Utility` (CRU) Windows app.
+
+The app works in Wine, but it's better to run it in the Windows. When run in Wine the exported monitor name is `Microsoft`.
 
 - Copy new `bin` file to `/usr/lib/firmware/edid` folder
 
