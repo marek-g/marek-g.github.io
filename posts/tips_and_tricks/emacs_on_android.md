@@ -32,7 +32,8 @@ Termux already has configured `sharedUserId`. However, both packages need to be 
 1. Download Termux APK (e.g. from F-Droid).
 1. Unpack: `apktool d <termux.apk>`.
 1. Build new APK for Termux: `apktool b <termux_folder> -o termux_for_emacs.apk`.
-1. Sign the APK: `jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/.android/debug.keystore termux_for_emacs.apk androiddebugkey`.
+1. Align zip file: `/opt/android-sdk/build-tools/<version>/zipalign -f -p 4 termux_for_emacs.apk termux_for_emacs_aligned.apk`
+1. Sign the APK: `/opt/android-sdk/build-tools/<version>/apksigner sign --ks ~/.android/debug.keystore ./termux_for_emacs_aligned.apk`.
 
 ## Emacs steps
 
@@ -47,7 +48,8 @@ Termux already has configured `sharedUserId`. However, both packages need to be 
    </resources>
    ```
 1. Build new APK for Emacs: `apktool b emacs_and_termux -o emacs_for_termux.apk`.
-1. Sign the APK: `jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/.android/debug.keystore emacs_for_termux.apk androiddebugkey`.
+1. Align zip file: `/opt/android-sdk/build-tools/<version>/zipalign -f -p 4 emacs_for_termux.apk emacs_for_termux_aligned.apk`
+1. Sign the APK: `/opt/android-sdk/build-tools/<version>/apksigner sign --ks ~/.android/debug.keystore ./emacs_for_termux_aligned.apk`.
 
 ## Setup
 
