@@ -48,7 +48,7 @@ Termux already has configured `sharedUserId`. However, both packages need to be 
    </resources>
    ```
 1. Build new APK for Emacs: `apktool b emacs_and_termux -o emacs_for_termux.apk`.
-1. Align zip file: `/opt/android-sdk/build-tools/<version>/zipalign -f -p 4 emacs_for_termux.apk emacs_for_termux_aligned.apk`
+1. (not needed anymore) Align zip file: `/opt/android-sdk/build-tools/<version>/zipalign -f -p 4 emacs_for_termux.apk emacs_for_termux_aligned.apk`
 1. Sign the APK: `/opt/android-sdk/build-tools/<version>/apksigner sign --ks ~/.android/debug.keystore ./emacs_for_termux_aligned.apk`.
 
 ## Setup
