@@ -30,9 +30,9 @@ If you don't want to make below steps manually, you can use my [prebuilt package
 Termux already has configured `sharedUserId`. However, both packages need to be signed with the same certificate, so we need to resign Termux APK with our own certificate (we assume you have already generated one). If you want to install more Termux packages, you will have to resign them all.
 
 1. Download Termux APK (e.g. from F-Droid).
-1. Unpack: `apktool d <termux.apk>`.
-1. Build new APK for Termux: `apktool b <termux_folder> -o termux_for_emacs.apk`.
-1. Align zip file: `/opt/android-sdk/build-tools/<version>/zipalign -f -p 4 termux_for_emacs.apk termux_for_emacs_aligned.apk`
+1. (not needed anymore) Unpack: `apktool d <termux.apk>`.
+1. (not needed anymore) Build new APK for Termux: `apktool b <termux_folder> -o termux_for_emacs.apk`.
+1. (not needed anymore) Align zip file: `/opt/android-sdk/build-tools/<version>/zipalign -f -p 4 termux_for_emacs.apk termux_for_emacs_aligned.apk`
 1. Sign the APK: `/opt/android-sdk/build-tools/<version>/apksigner sign --ks ~/.android/debug.keystore ./termux_for_emacs_aligned.apk`.
 
 ## Emacs steps
