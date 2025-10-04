@@ -54,7 +54,7 @@ Created partition with type = 0xBF00 (Solaris Root). To change partition type yo
 ## Create ZFS pool on the partition
 
 ```sh
-sudo zpool create -f -o ashift=12 -o autotrim=on -O acltype=posixacl -O xattr=sa -O atime=off -O relatime=off -O recordsize=256k -O dnodesize=disabled -O normalization=formD -O mountpoint=none -O canmount=off -O devices=off -O compression=zstd-3 ssd /dev/disk/by-partlabel/Linux
+sudo zpool create -f -o ashift=12 -o autotrim=on -O acltype=posixacl -O xattr=sa -O atime=off -O relatime=off -O recordsize=256k -O dnodesize=legacy -O normalization=formD -O mountpoint=none -O canmount=off -O devices=off -O compression=zstd-3 ssd /dev/disk/by-partlabel/Linux
 ```
 
 Please note! As of 2023-11-11 I have found a bug in `openzfs` that `dnodesize=auto` makes it impossible to reveive incremental backup, so I changed it form `auto` to `disabled`. If you have it enabled you can still take care and set `-o dnodesize=legacy` during creating datasets. It's enough to set it to the root dataset, as the children datasets will inherit the setting.
