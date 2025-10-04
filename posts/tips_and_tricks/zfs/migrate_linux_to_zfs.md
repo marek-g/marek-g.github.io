@@ -80,6 +80,8 @@ zfs list
 
 ## Mount ZFS filesystems
 
+The import below automatically mounts /home folder in /mnt directory (because of automount flag), but the root must be mounted manually.
+
 ```sh
 sudo zfs umount -a
 sudo zpool export ssd
