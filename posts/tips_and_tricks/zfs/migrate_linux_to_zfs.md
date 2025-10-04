@@ -92,6 +92,14 @@ sudo zfs mount ssd/manjaro/root
 
 ## Copy system files
 
+One possible method:
+
+``` sh
+sudo rsync -axHAWXS --numeric-ids --info=progress2 /src/ /mnt
+```
+
+Please note! Slash at the end of `/src/` is needed. Otherwise rsync will create `src` subfolder.
+
 ## Update system configuration
 
 Information to boot loaders where to find root file system:
